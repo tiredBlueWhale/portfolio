@@ -1,14 +1,14 @@
 import { AnimationType, Children, RefViewport } from "../types"
 import { AnimationHorizontalScroll, AnimationHorizontalScrollProps } from "./AnimationHorizontalScroll";
-import { AnimationOpacityProps } from "./AnimationOpacity";
+import { AnimationOpacity, AnimationOpacityProps } from "./AnimationOpacity";
 
-export type AnimationPropsShared = AnimationType & RefViewport & Children;
-export type AnimationProps = AnimationHorizontalScrollProps | AnimationOpacityProps;
+export type AnimationWrapperPropsShared = AnimationType & RefViewport & Children;
+export type AnimationWrapperProps = AnimationHorizontalScrollProps | AnimationOpacityProps;
 
-export const Animation = ({ type, children, ...props }: AnimationProps) => {
+export const AnimationWrapper = ({ type, children, ...props }: AnimationWrapperProps) => {
     switch (type) {
         case 'opacity':
-            return null;
+            return <AnimationOpacity {...props}>{children}</AnimationOpacity>
         case 'slide-in':
             return null;
         case 'paint':

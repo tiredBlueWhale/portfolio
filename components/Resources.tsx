@@ -1,14 +1,10 @@
 import { Children, Downloads, MadeWithType } from "../types";
 
-const Wrapper = ({ children }: Children) => <div className="flex flex-wrap items-baseline justify-center">{children}</div>
+const Wrapper = ({ children }: Children) => <div className="flex flex-wrap items-center justify-center">{children}</div>
 const MadeWith = ({ type }: { type: MadeWithType }) => {
     switch (type) {
         case 'unity':
-            return (
-                <a>
-                    <img src="U_Logo_T1_MadeWith_Small_Black_RGB.svg" alt="Appstore Download" className='h-20' />
-                </a>
-            );
+            return <img src="U_Logo_T1_MadeWith_Small_Black_RGB.png" alt="Appstore Download" className='block h-full m-auto max-w-full' />
         case 'react-native':
             return <></>;
         default:
@@ -17,20 +13,12 @@ const MadeWith = ({ type }: { type: MadeWithType }) => {
     }
 }
 
-const Download = ({ type, url }: Downloads) => {
+const Download = ({ type }: Downloads) => {
     switch (type) {
         case 'appstore':
-            return (
-                <a>
-                    <img src="Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Appstore Download" className='h-12' />
-                </a>
-            );
+            return <img src="Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Appstore Download" className='block h-full m-auto max-w-full' />;
         case 'playstore':
-            return (
-                <a>
-                    <img src="google-play-badge.png" alt="PlayStore Download" className='h-16' />
-                </a>
-            )
+            return <img src="google-play-badge.png" alt="PlayStore Download" className='block h-full m-auto max-w-full' />;
         case 'git':
             return <></>;
         default:
@@ -47,12 +35,20 @@ export type ResourcesProps = {
 export const Resources = ({ madeWith, downloads }: ResourcesProps) => {
     return (
         <div className="flex flex-col justify-start items-stretch">
-            <Wrapper>
-                {madeWith.map((type, index) => <MadeWith key={index} type={type} />)}
-            </Wrapper>
-            <Wrapper>
-                {downloads.map((download, index) => <Download key={index} {...download} />)}
-            </Wrapper>
+            <div className="flex items-center justify-center h-8 sm:h-16 mb-2">
+                {madeWith.map((type, index) => (
+                    <a key={index} className="h-full px-2">
+                        <MadeWith type={type} />
+                    </a>
+                ))}
+            </div>
+            <div className="flex items-center justify-center h-12 sm:h-16">
+                {downloads.map((download, index) => (
+                    <a key={index} className="h-full px-2">
+                        <Download {...download} />
+                    </a>
+                ))}
+            </div>
         </div>
     )
 }
