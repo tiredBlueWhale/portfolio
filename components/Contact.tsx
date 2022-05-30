@@ -32,7 +32,7 @@ export const Contact = () => {
                     ))
                 }
                 <div className="flex-1">
-                    <img src="tiredBlueWhale.png" alt="Tired Blue Whale Logo Large" className='h-20 sm:h-32 max-w-full pt-2' />
+                    <img src="tiredBlueWhale.png" alt="Tired Blue Whale Logo Large" className='h-20 sm:h-32 max-w-full pt-2 -scale-x-100' />
                 </div>
             </div>
         </Card>

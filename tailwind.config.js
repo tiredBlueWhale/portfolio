@@ -11,10 +11,18 @@ module.exports = {
       'mono': ['ui-monospace', 'SFMono-Regular'],
     },
     extend: {
-      // colors: {
-      //   'bg-color': '#1d4ed8',
-      // },
+      keyframes: {
+        swipe: {
+          '0%, 100%': { transform: 'rotate(-90deg)' },
+          '50%': { transform: 'rotate(90deg)' },
+        }
+      },
+      animation: {
+        swipe: 'swipe 1s ease-in-out infinite',
+      }
     },
   },
-  plugins: []
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ]
 }

@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Head from 'next/head';
 import Html from 'next/head';
 import { useEffect } from 'react';
 import { About, Contact, Footer, Hero, Section, SectionModel, Submarine } from '../components'
@@ -32,7 +33,10 @@ const sections: SectionModel[] = [
   },
   {
     title: 'Lorem ipsum dolor sit amet consectetur',
-    summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae velit et neque lacinia pharetra eu quis diam. Morbi in faucibus metus, eget suscipit nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae velit et neque lacinia pharetra eu quis diam. Morbi in faucibus metus, eget suscipit nibh. Phasellus vitae velit et neque lacinia pharetra eu quis diam. Morbi in faucibus metus, eget suscipit nibh.',
+    summary: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+    Phasellus vitae velit et neque lacinia pharetra eu quis diam. 
+    Morbi in faucibus metus, eget suscipit nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    `,
     more: '',
     backgroundColor: 'bg-blue-700',
     waveColor: 'fill-blue-700',
@@ -55,6 +59,9 @@ const sections: SectionModel[] = [
 const Home: NextPage = () => {
   return (
     <>
+      <Head>
+        <title>Tired Blue Whale Portfolio</title>
+      </Head>
       <Hero colorWaveBackground='fill-blue-600' colorWaveForeground='fill-blue-500' />
       <About backgroundColor='bg-blue-500' />
       {sections.map(((section, index) => <Section key={index} isRight={index % 2 === 1} {...section} />))}

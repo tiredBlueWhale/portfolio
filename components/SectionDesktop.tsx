@@ -47,7 +47,7 @@ export const SectionDesktop = ({ isRight, title, summary, more, backgroundColor,
                 </div>
                 <div className={`basis-7/12 flex flex-wrap justify-center ${isRight ? 'flex-row-reverse' : 'flex-row'}`}>
                     {images.map((image, index) => (
-                        <img key={index} src={image} className='object-contain snap-center' />
+                        <img key={index} src={image} className='object-contain' />
                     ))}
                 </div>
             </div>

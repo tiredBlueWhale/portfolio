@@ -11,7 +11,7 @@ export const SectionMobile = ({ title, summary, more, backgroundColor, waveColor
     const onReadMore = useCallback(() => console.log('Read more'), [])
 
     return (
-        <div className='h-screen w-screen flex flex-col snap-start'>
+        <div className='h-screen w-screen flex flex-col'>
             <div className='flex-none sticky top-0'>
                 <div className={`${backgroundColor} drop-shadow flex justify-center items-center pt-4 pb-3 px-2`}>
                     <Title>
@@ -19,30 +19,25 @@ export const SectionMobile = ({ title, summary, more, backgroundColor, waveColor
                     </Title>
                 </div>
             </div>
-            <div className='flex-1 pt-4 pb-12 flex flex-col justify-start overflow-hidden'>
-                <div className='flex-1 flex flex-col justify-center overflow-hidden'>
-                    <div className='flex-none h-[40vh] flex flex-nowrap items-center overflow-x-scroll overflow-y-hidden snap-mandatory snap-x '>
-                        {images.map((image, index) => (
-                            <div key={index} className='h-full w-screen flex-shrink-0 snap-center flex justify-center py-4'>
-                                <img key={index} src={image} className='object-contain' />
-                            </div>
-                        ))}
-                    </div>
-                    <div className='flex flex-col overflow-hidden'>
-                        <div className='px-4 py-4 overflow-hidden' onClick={onReadMore}>
-                            <Summary>
-                                {summary}
-                            </Summary>
+            <div className='flex-1 pt-4 pb-12 flex flex-col justify-start min-h-0'>
+                <div className='px-4' onClick={onReadMore}>
+                    <Summary>
+                        {summary}
+                    </Summary>
+                </div>
+                <div className='flex-1 pt-8 pb-4 flex flex-nowrap items-center overflow-x-scroll overflow-y-hidden snap-mandatory snap-x'>
+                    {images.map((image, index) => (
+                        <div key={index} className='h-full w-screen flex-shrink-0 snap-center flex justify-center py-4'>
+                            <img key={index} src={image} className='object-contain' />
                         </div>
-                        <div className=''>
-                            <LearnMore />
-                        </div>
-                    </div>
+                    ))}
+                </div>
+                <div className='py-4'>
+                    <LearnMore />
                 </div>
                 <div className=''>
                     <Resources {...props} />
                 </div>
-                {/* </div> */}
             </div>
         </div>
     )
