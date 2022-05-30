@@ -1,4 +1,3 @@
-import Image from 'next/image'
 
 type SocialButtonProsp = {
     image: string;
@@ -13,12 +12,7 @@ const buttons: SocialButtonProsp[] = [
 
 const SocialButton = ({ image, link }: SocialButtonProsp) => (
     <a href={link} className="p-2 rounded-full bg-white">
-        <Image
-            src={image}
-            height={48}
-            width={48}
-            alt="Your Name"
-        />
+
     </a>
 )
 
