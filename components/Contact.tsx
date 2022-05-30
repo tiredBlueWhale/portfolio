@@ -26,7 +26,7 @@ export const Contact = () => {
                 </div>
                 {
                     contactData.map(({ href, text }, index) => (
-                        <a className="uppercase text-3xl sm:text-5xl py-2" href={href}>
+                        <a key={index} className="uppercase text-3xl sm:text-5xl py-2" href={href}>
                             {text}
                         </a>
                     ))
