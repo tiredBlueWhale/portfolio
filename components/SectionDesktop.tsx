@@ -4,7 +4,7 @@ import { dummyForward, Forward } from './Forward';
 import { SectionProps } from './Section';
 import { ReadMore, Summary, Title } from './Text';
 
-export const SectionDesktop = ({ isRight, title, summary, more, backgroundColor, waveColor }: SectionProps) => {
+export const SectionDesktop = ({ isRight, title, summary, more, backgroundColor, waveColor, images }: SectionProps) => {
 
     const onReadMore = useCallback(() => console.log('Read more'), [])
 
@@ -38,9 +38,11 @@ export const SectionDesktop = ({ isRight, title, summary, more, backgroundColor,
                             <Forward {...dummyForward} />
                         </div>
                     </div>
-                    <div className='basis-7/12 flex flex-wrap'>
-                        <img src="/iphone.png" className='object-contain snap-center' />
-                        <img src="/iphone.png" className='object-contain snap-center' />
+                    <div className={`basis-7/12 flex flex-wrap justify-center ${isRight ? 'flex-row-reverse' : 'flex-row'}`}>
+                        {images.map((image, index) => (
+                            <img key={index} src={image} className='object-contain snap-center' />
+                        ))}
+                        {/* <img src="/iphone.png" className='object-contain snap-center' /> */}
                     </div>
                 </div>
             </div>

@@ -10,7 +10,7 @@ export const Hero = ({ colorWaveBackground, colorWaveForeground }: HeroProps) =>
         <>
             <div className="sticky top-0 inset-0 z-10 ">
                 <div className="h-screen relative flex flex-col justify-center sm:justify-start items-center sm:pt-[10vh]">
-                    <img src="/tiredBlueWhale.png" alt="Appstore Download" className='max-h-[50vh] max-w-[80vw] pb-4 z-20' />
+                    <img src="tiredBlueWhale.png" alt="Appstore Download" className='max-h-[50vh] max-w-[80vw] pb-4 z-20' />
                     <span className="text-5xl sm:text-8xl text-center text-white">
                         Tired Blue Whale
                     </span>

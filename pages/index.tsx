@@ -1,6 +1,8 @@
 import type { NextPage } from 'next'
 import { About, Contact, Footer, Hero, Section, SectionModel } from '../components'
 
+const mockImages = ['iphone.png', 'iphone.png', 'iphone.png'];
+
 const sections: SectionModel[] = [
   {
     title: 'Color & Shape',
@@ -8,7 +10,7 @@ const sections: SectionModel[] = [
     more: '',
     backgroundColor: 'bg-blue-600',
     waveColor: 'fill-blue-600',
-    images: ['/iphone.png', '/iphone.png', '/iphone.png'],
+    images: mockImages,
   },
   {
     title: 'Lorem ipsum dolor sit amet consectetur',
@@ -16,7 +18,7 @@ const sections: SectionModel[] = [
     more: '',
     backgroundColor: 'bg-blue-700',
     waveColor: 'fill-blue-700',
-    images: ['/iphone.png', '/iphone.png', '/iphone.png'],
+    images: mockImages,
   },
   {
     title: 'Stay Inside',
@@ -24,7 +26,7 @@ const sections: SectionModel[] = [
     more: '',
     backgroundColor: 'bg-blue-800',
     waveColor: 'fill-blue-800',
-    images: ['/iphone.png', '/iphone.png', '/iphone.png'],
+    images:mockImages,
   },
 ]
 
