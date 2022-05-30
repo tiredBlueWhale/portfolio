@@ -11,7 +11,7 @@ module.exports = withPlugins([
     //   strip: true,
     //   verbose: true,
     // },
-    imagesPublicPath: process.env.REPO_PREFIX || 'test',
+    //imagesPublicPath: process.env.REPO_PREFIX || 'test',
     // optimizeImages: false,
   }],
 

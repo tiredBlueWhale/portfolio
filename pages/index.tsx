@@ -1,7 +1,21 @@
 import type { NextPage } from 'next'
 import { About, Contact, Footer, Hero, Section, SectionModel } from '../components'
+import { ResourcesProps } from '../components/Resources';
+import { Downloads, MadeWithType } from '../types';
 
 const mockImages = ['iphone.png', 'iphone.png', 'iphone.png'];
+const madeWithDummy: MadeWithType[] = ['unity'];
+const downloadsDummy: Downloads[] = [
+  {
+    type: 'appstore',
+    url: ''
+  },
+  {
+    type: 'playstore',
+    url: ''
+  }
+];
+
 
 const sections: SectionModel[] = [
   {
@@ -11,6 +25,8 @@ const sections: SectionModel[] = [
     backgroundColor: 'bg-blue-600',
     waveColor: 'fill-blue-600',
     images: mockImages,
+    madeWith: madeWithDummy,
+    downloads: downloadsDummy,
   },
   {
     title: 'Lorem ipsum dolor sit amet consectetur',
@@ -19,6 +35,8 @@ const sections: SectionModel[] = [
     backgroundColor: 'bg-blue-700',
     waveColor: 'fill-blue-700',
     images: mockImages,
+    madeWith: madeWithDummy,
+    downloads: downloadsDummy,
   },
   {
     title: 'Stay Inside',
@@ -26,7 +44,9 @@ const sections: SectionModel[] = [
     more: '',
     backgroundColor: 'bg-blue-800',
     waveColor: 'fill-blue-800',
-    images:mockImages,
+    images: mockImages,
+    madeWith: madeWithDummy,
+    downloads: downloadsDummy,
   },
 ]
 

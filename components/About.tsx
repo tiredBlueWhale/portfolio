@@ -10,8 +10,8 @@ export const About = () => {
                 <Animation refViewport={refAbout} type="scroll-horizontal" speed={.8}>
                     <p className="text-white text-4xl sm:text-6xl text-center">
                         Hello | Hallo | Moi | 안녕 | やあ | Hola | Oi | 你好 | Salve<br />
-                        to my Portofolio <br />
-                        Enjoy ^_^
+                        {/* to the Portofolio <br /> */}
+                        Let's dive in ^_^
                     </p>
                 </Animation>
             </div>

@@ -1,12 +1,12 @@
 import { info } from 'console';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { More, Images, BackgroundColor } from '../types';
-import { Forward, dummyForward } from './Forward';
+import { Resources } from './Resources';
 import { SectionProps } from './Section';
 import { ReadMore, Summary, Title } from './Text';
 import { Wave } from "./Wave";
 
-export const SectionMobile = ({ title, summary, more, backgroundColor, waveColor, images }: SectionProps) => {
+export const SectionMobile = ({ title, summary, more, backgroundColor, waveColor, images, ...props }: SectionProps) => {
 
     const onReadMore = useCallback(() => console.log('Read more'), [])
 
@@ -37,7 +37,7 @@ export const SectionMobile = ({ title, summary, more, backgroundColor, waveColor
                     <ReadMore />
                 </button>
                 <div className=''>
-                    <Forward {...dummyForward} />
+                    <Resources {...props} />
                 </div>
                 {/* </div> */}
             </div>

@@ -41,6 +41,14 @@ export type Summary = {
 export type More = {
     more?: string;
 }
+
 export type Images = {
     images: string[];
+}
+
+export type MadeWithType = 'unity' | 'react-native';
+export type DownloadType = 'appstore' | 'playstore' | 'git';
+export type Downloads = {
+    type: DownloadType;
+    url: string;
 }

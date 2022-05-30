@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Card } from './Card';
-import { dummyForward, Forward } from './Forward';
+import { Resources } from './Resources';
 import { SectionProps } from './Section';
 import { ReadMore, Summary, Title } from './Text';
 
-export const SectionDesktop = ({ isRight, title, summary, more, backgroundColor, waveColor, images }: SectionProps) => {
+export const SectionDesktop = ({ isRight, title, summary, more, backgroundColor, waveColor, images, ...props }: SectionProps) => {
 
     const onReadMore = useCallback(() => console.log('Read more'), [])
 
@@ -35,7 +35,7 @@ export const SectionDesktop = ({ isRight, title, summary, more, backgroundColor,
                             <ReadMore />
                         </button>
                         <div className=''>
-                            <Forward {...dummyForward} />
+                            <Resources {...props} />
                         </div>
                     </div>
                     <div className={`basis-7/12 flex flex-wrap justify-center ${isRight ? 'flex-row-reverse' : 'flex-row'}`}>
