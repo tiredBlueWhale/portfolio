@@ -28,11 +28,9 @@ export const Contact = () => {
                 <div className="flex-1" />
                 {
                     contactData.map(({ href, text }, index) => (
-                        <div className="py-2 sm:py-4">
-                            <a key={index} className="uppercase text-3xl sm:text-5xl" href={href}>
-                                {text}
-                            </a>
-                        </div>
+                        <a key={index} className="uppercase text-3xl sm:text-5xl" href={href}>
+                            {text}
+                        </a>
                     ))
                 }
                 <div className="flex-1">

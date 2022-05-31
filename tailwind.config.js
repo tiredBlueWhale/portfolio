@@ -32,7 +32,7 @@ module.exports = {
         },
         logo: {
           '0%': { opacity: 0, heigth: 0 },
-          '70%': { opacity: .5 },
+          '50%': { opacity: .5 },
           '100%': { opacity: 1, heigth: '100%' },
         },
       },
