@@ -1,3 +1,5 @@
+import { useRef } from "react";
+import { AnimationWrapper } from "./AnimationWrapper";
 import { Card } from "./Card"
 import { Wave } from "./Wave"
 
@@ -8,7 +10,7 @@ type ContactData = {
 const contactData: ContactData[] = [
     {
         href: 'mailto: tired.blue.whale@gmail.com',
-        text: 'Contact Me'
+        text: 'Contact'
     },
     {
         href: 'https://github.com/tiredBlueWhale',
@@ -18,17 +20,19 @@ const contactData: ContactData[] = [
 
 export const Contact = () => {
 
+    const refAnimation = useRef(null);
+
     return (
         <Card waveColor="fill-blue-900" index={0}>
-            <div className="h-screen bg-blue-900 flex flex-col justify-center items-center">
-                <div className="flex-1">
-
-                </div>
+            <div ref={refAnimation} className="h-screen bg-blue-900 flex flex-col justify-center items-center">
+                <div className="flex-1" />
                 {
                     contactData.map(({ href, text }, index) => (
-                        <a key={index} className="uppercase text-3xl sm:text-5xl py-2" href={href}>
-                            {text}
-                        </a>
+                        <div className="py-2 sm:py-4">
+                            <a key={index} className="uppercase text-3xl sm:text-5xl" href={href}>
+                                {text}
+                            </a>
+                        </div>
                     ))
                 }
                 <div className="flex-1">

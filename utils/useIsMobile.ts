@@ -1,18 +1,14 @@
 import { useCallback, useEffect, useState } from "react";
+import { useWindowSize } from "./useWindowSize";
 
 export const useIsMobile = () => {
-
+    const windowSize = useWindowSize();
     const [isMobile, setIsMobile] = useState(true);
-    // tailwind default sm: size 640px
-    const windowResize = useCallback(() => {
-        setIsMobile(window.innerWidth < 640)
-    }, [])
 
     useEffect(() => {
-        windowResize();
-        window.addEventListener('resize', windowResize);
-        () => window.removeEventListener('resize', windowResize);
-    }, [windowResize])
-  
+        // tailwind default sm: size 640px
+        setIsMobile(windowSize.width < 640)
+    }, [windowSize.width])
+
     return isMobile;
-  }
+}

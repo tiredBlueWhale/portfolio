@@ -25,7 +25,7 @@ export const AnimationHorizontalScroll = ({children, refViewport, rightToLeft, s
     }, [scrollY, refViewport, refAnimation])
 
     return (
-        <div ref={refAnimation} className="transition-transform	ease-linear duration-150" style={{transform: `translateX(${translateX}px)`}}>
+        <div ref={refAnimation} className="transition-transform	ease-linear sm:duration-150" style={{transform: `translateX(${translateX}px)`}}>
             {children}
         </div>
     );

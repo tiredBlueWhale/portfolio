@@ -12,14 +12,31 @@ module.exports = {
     },
     extend: {
       keyframes: {
-        swipe: {
-          '0%, 100%': { transform: 'rotate(-90deg)' },
-          '50%': { transform: 'rotate(90deg)' },
-        }
+        swipeLine: {
+          '0%': { width: '0%' },
+          '100%': { width: '100%' },
+        },
+        swipeTop: {
+          '0%, 100%': { top: '100%' },
+          '50%': { top: '0px' },
+        },
+        swipeBottom: {
+          '0%, 100%': { bottom: '100%' },
+          '50%': { bottom: '0px' },
+        },
+        swipeChild: {
+          '0%': { opacity: '0' },
+          '50%': { opacity: '0' },
+          '80%': { opacity: '.5' },
+          '100%': { opacity: '1' },
+        },
+        logo: {
+          '0%': { opacity: 0, heigth: 0 },
+          '70%': { opacity: .5 },
+          '100%': { opacity: 1, heigth: '100%' },
+        },
       },
-      animation: {
-        swipe: 'swipe 1s ease-in-out infinite',
-      }
+      animation: {}
     },
   },
   plugins: [

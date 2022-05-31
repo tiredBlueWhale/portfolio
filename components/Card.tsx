@@ -6,7 +6,7 @@ export type CardProps = Children & WaveColor & Index;
 export const Card = ({ children, ...props }: CardProps) => (
     <div className='snap-start sm:snap-align-none'>
         <div className='relative'>
-            <div className="absolute inset-x-0 bottom-0 h-32">
+            <div className="absolute inset-x-0 bottom-0 h-12">
                 <Wave {...props} />
             </div>
         </div>

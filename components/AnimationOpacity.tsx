@@ -1,40 +1,73 @@
 import { useState, useRef, useEffect } from "react";
 import { Children } from "../types"
-import { useScrollY } from "../utils";
+import { useScrollY, useWindowSize } from "../utils";
 import { AnimationWrapperPropsShared } from "./AnimationWrapper"
 
 export type AnimationOpacityProps = {
-
+    useViewportOffset?: boolean;
 } & AnimationWrapperPropsShared
 
-export const AnimationOpacity = ({children, refViewport}: AnimationOpacityProps) => {
+type Constants = {
+    translate: number,
+    animationDistance: number,
+    animationTopStart: number,
+    animationTopEnd: number,
+    animationBottomStart: number,
+    animationBottomEnd: number
+}
+export const AnimationOpacity = ({ children, refViewport }: AnimationOpacityProps) => {
 
     const scrollY = useScrollY();
-    const [progress, setProgress] = useState(0);
-    // const [opacity, setOpacity] = useState(0);
-    // const [translateY, setTranslateY] = useState(-20);
+    const windowSize = useWindowSize();
+    const [animation, setAnimation] = useState({
+        opacity: 1,
+        translateY: 200,
+    });
+    const [constants, setConstants] = useState<Constants>();
+
     const refAnimation = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         if (!refViewport.current || !refAnimation.current) return;
 
-        const { offsetTop: offsetTopWrapper, } = refViewport.current;
-        const { offsetTop: offsetTopAnimation, clientHeight: height, } = refAnimation.current;
-        console.log(scrollY, offsetTopAnimation, offsetTopWrapper);
+        const { offsetTop: offsetTopAnimation, clientHeight: heightAnimation, } = refAnimation.current;
+        const { offsetTop: offsetTopWrapper, clientHeight: heigthWrapper } = refViewport.current;
+        const translate = windowSize.height * .25;
+        const animationDistance = windowSize.height * .3;
+        const animationTopStart = offsetTopAnimation + offsetTopWrapper - windowSize.height * .75 + heightAnimation * .5;
+        const animationTopEnd = animationTopStart + animationDistance;
+        const animationBottomEnd = animationTopStart + heigthWrapper;
+        const animationBottomStart = animationBottomEnd - animationDistance;
 
-        const animationPointStart = offsetTopAnimation + offsetTopWrapper - window.innerHeight * .75 + height * .5;
-        const animationDistance = window.innerHeight * .25;
-        const animationEnd = animationPointStart + animationDistance;
-        if (scrollY < animationPointStart) setProgress(0);
-        else if (scrollY > animationEnd) setProgress(1);
-        else {
-            setProgress((scrollY - animationPointStart) / animationDistance);
+        setConstants({
+            translate,
+            animationDistance,
+            animationTopStart,
+            animationTopEnd,
+            animationBottomEnd,
+            animationBottomStart,
+        })
+    }, [refViewport, refAnimation, windowSize.height])
+
+    useEffect(() => {
+        if (constants === undefined) return;
+
+        const {translate, animationDistance, animationTopStart, animationTopEnd, animationBottomEnd, animationBottomStart} = constants;
+
+        if (scrollY < animationTopStart) setAnimation({ opacity: 0, translateY: translate });
+        else if (animationTopStart <= scrollY && scrollY <= animationTopEnd) {
+            const progress = (scrollY - animationTopStart) / animationDistance;
+            setAnimation({ opacity: progress, translateY: translate * (1 - progress) });
         }
-
-    }, [scrollY, refViewport, refAnimation])
+        else if (animationBottomStart <= scrollY && scrollY <= animationBottomEnd) {
+            const progress = (scrollY - animationBottomStart) / animationDistance;
+            setAnimation({ opacity: 1 - progress, translateY: -translate * progress });
+        } else if (animationBottomEnd < scrollY) setAnimation({ opacity: 0, translateY: -translate });
+        else setAnimation({ opacity: 1, translateY: 0 });
+    }, [scrollY, constants])
 
     return (
-        <div ref={refAnimation} className="transition-all duration-100" style={{opacity: progress, transform: `translateY(${window.innerHeight * .2 - window.innerHeight * .2 * progress}px)`}}>
+        <div ref={refAnimation} className="transition-all duration-75ms" style={{ opacity: animation.opacity, transform: `translateY(${animation.translateY}px)` }}>
             {children}
         </div>
     )

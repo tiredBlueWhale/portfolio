@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { useWindowSize } from '../utils';
 import { AnimationWrapper } from './AnimationWrapper';
 import { Card } from './Card';
 import { Resources } from './Resources';
@@ -7,6 +8,7 @@ import { LearnMore, Summary, Title } from './Text';
 
 export const SectionDesktop = ({ isRight, title, summary, more, backgroundColor, waveColor, images, ...props }: SectionProps) => {
 
+    const windowSize = useWindowSize();
     const onReadMore = useCallback(() => console.log('Read more'), [])
 
     const [stickyTop, setStickyTop] = useState(0);
@@ -16,22 +18,22 @@ export const SectionDesktop = ({ isRight, title, summary, more, backgroundColor,
     useEffect(() => {
         if (!refInfo.current) return;
         const { clientHeight: heigth } = refInfo.current;
-        const stickyTop = window.innerHeight / 2 - heigth / 2;
+        const stickyTop = windowSize.height / 2 - heigth / 2;
         setStickyTop(stickyTop);
-    }, [refInfo])
+    }, [refInfo, windowSize.height])
 
     return (
         <Card waveColor={waveColor}>
             <div ref={refAnimation} className={`min-h-screen py-12 flex items-start ${isRight ? 'flex-row-reverse' : 'flex-row'}`}>
                 <div ref={refInfo} className='basis-5/12 max-w-md sticky px-12' style={{ top: `${stickyTop}px` }}>
-                    <div>
+                    <div className='mb-4'>
                         <AnimationWrapper type='opacity' refViewport={refAnimation}>
                             <Title>
                                 {title}
                             </Title>
                         </AnimationWrapper>
                     </div>
-                    <button className={``} onClick={onReadMore}>
+                    <button className='mb-4' onClick={onReadMore}>
                         <AnimationWrapper type='opacity' refViewport={refAnimation}>
                             <Summary>
                                 {summary}
@@ -39,7 +41,7 @@ export const SectionDesktop = ({ isRight, title, summary, more, backgroundColor,
                             <LearnMore />
                         </AnimationWrapper>
                     </button>
-                    <div className=''>
+                    <div className='mb-4'>
                         <AnimationWrapper type='opacity' refViewport={refAnimation}>
                             <Resources {...props} />
                         </AnimationWrapper>
