@@ -30,7 +30,7 @@ export const AnimationFadeInOut = ({ children, refViewport }: AnimationOpacityPr
         const { offsetTop: offsetTopWrapper, clientHeight: heigthWrapper } = refViewport.current;
         const translate = windowSize.height * .25;
         const animationDistance = windowSize.height * .25;
-        const animationTopStart = offsetTopWrapper + offsetTopAnimation +  - windowSize.height * .8 + heightAnimation * .5;
+        const animationTopStart = offsetTopWrapper + offsetTopAnimation - windowSize.height * .8 + heightAnimation * .5;
         const animationTopEnd = animationTopStart + animationDistance;
         const animationBottomEnd = offsetTopWrapper + heigthWrapper + offsetTopAnimation - windowSize.height * .7 + heightAnimation * .5;
         const animationBottomStart = animationBottomEnd - animationDistance;
@@ -43,7 +43,7 @@ export const AnimationFadeInOut = ({ children, refViewport }: AnimationOpacityPr
             animationBottomEnd,
             animationBottomStart,
         })
-    }, [refViewport.current, refAnimation.current, windowSize.height]);
+    }, [refViewport.current?.clientHeight, refViewport.current?.offsetTop, refViewport.current?.clientHeight, refViewport.current?.offsetTop, windowSize.height]);
 
     useEffect(() => {
         if (constants === undefined) return;
