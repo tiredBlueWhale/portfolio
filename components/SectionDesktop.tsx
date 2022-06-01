@@ -33,7 +33,7 @@ export const SectionDesktop = ({ isLeftToRight, title, summary, more, background
 
     return (
         <Card waveColor={waveColor}>
-            <div ref={refAnimation} className={`max-w-screen-xl py-12 flex justify-center items-start ${isLeftToRight ? 'flex-row-reverse' : 'flex-row'} m-auto pb-[30vh]`}>
+            <div ref={refAnimation} className={`max-w-screen-xl py-12 flex justify-center items-start ${isLeftToRight ? 'flex-row-reverse' : 'flex-row'} m-auto`}>
                 <div ref={refInfo} className='sticky max-w-md px-12' style={{ top: `${infoStickyTop}px` }}>
                     <div className='mb-4'>
                         <AnimationFadeInOut refViewport={refAnimation}>
@@ -69,7 +69,7 @@ export const SectionDesktop = ({ isLeftToRight, title, summary, more, background
                                     <AnimationParallaxScroll key={index} refViewport={refAnimation} speed={speed}>
                                         <div className={`max-h-screen min-w-0 flex ease-in-out duration-300`}>
                                             <div className='m-auto relative' style={{ transform: translate }}>
-                                                <img key={index} src={src} className='block max-h-full max-w-full w-auto h-auto'/>
+                                                <img key={index} src={src} className='block max-h-screen max-w-full w-auto h-auto'/>
                                             </div>
                                         </div>
                                     </AnimationParallaxScroll>
