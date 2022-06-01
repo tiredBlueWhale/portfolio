@@ -24,7 +24,7 @@ export const SectionDesktop = ({ isRight, title, summary, more, backgroundColor,
 
     return (
         <Card waveColor={waveColor}>
-            <div ref={refAnimation} className={`min-h-screen py-12 flex items-start ${isRight ? 'flex-row-reverse' : 'flex-row'}`}>
+            <div ref={refAnimation} className={`min-h-screen max-w-screen-2xl py-12 flex justify-center items-start ${isRight ? 'flex-row-reverse' : 'flex-row'} m-auto`}>
                 <div ref={refInfo} className='basis-5/12 max-w-md sticky px-12' style={{ top: `${stickyTop}px` }}>
                     <div className='mb-4'>
                         <AnimationWrapper type='opacity' refViewport={refAnimation}>
@@ -33,14 +33,19 @@ export const SectionDesktop = ({ isRight, title, summary, more, backgroundColor,
                             </Title>
                         </AnimationWrapper>
                     </div>
-                    <button className='mb-4' onClick={onReadMore}>
+                    <div className='mb-4'>
                         <AnimationWrapper type='opacity' refViewport={refAnimation}>
                             <Summary>
                                 {summary}
                             </Summary>
+
+                        </AnimationWrapper>
+                    </div>
+                    <div className='mb-4' onClick={onReadMore}>
+                        <AnimationWrapper type='opacity' refViewport={refAnimation}>
                             <LearnMore />
                         </AnimationWrapper>
-                    </button>
+                    </div>
                     <div className='mb-4'>
                         <AnimationWrapper type='opacity' refViewport={refAnimation}>
                             <Resources {...props} />

@@ -35,17 +35,17 @@ export type ResourcesProps = {
 export const Resources = ({ madeWith, downloads }: ResourcesProps) => {
     return (
         <div className="flex flex-col justify-start items-stretch">
-            <div className="flex items-center justify-center h-8 sm:h-16 mb-2">
-                {madeWith.map((type, index) => (
-                    <a key={index} className="h-full px-2">
-                        <MadeWith type={type} />
-                    </a>
-                ))}
-            </div>
-            <div className="flex items-center justify-center h-12 sm:h-16">
+            <div className="flex items-center justify-center h-12 sm:h-16 mb-2">
                 {downloads.map((download, index) => (
                     <a key={index} className="h-full px-2">
                         <Download {...download} />
+                    </a>
+                ))}
+            </div>
+            <div className="flex items-center justify-center h-8 sm:h-16">
+                {madeWith.map((type, index) => (
+                    <a key={index} className="h-full px-2">
+                        <MadeWith type={type} />
                     </a>
                 ))}
             </div>

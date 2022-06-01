@@ -33,8 +33,8 @@ export const AnimationOpacity = ({ children, refViewport }: AnimationOpacityProp
         const { offsetTop: offsetTopAnimation, clientHeight: heightAnimation, } = refAnimation.current;
         const { offsetTop: offsetTopWrapper, clientHeight: heigthWrapper } = refViewport.current;
         const translate = windowSize.height * .25;
-        const animationDistance = windowSize.height * .3;
-        const animationTopStart = offsetTopAnimation + offsetTopWrapper - windowSize.height * .7 + heightAnimation * .5;
+        const animationDistance = windowSize.height * .25;
+        const animationTopStart = offsetTopAnimation + offsetTopWrapper - windowSize.height * .8 + heightAnimation * .5;
         const animationTopEnd = animationTopStart + animationDistance;
         const animationBottomEnd = animationTopStart + heigthWrapper;
         const animationBottomStart = animationBottomEnd - animationDistance;
@@ -67,7 +67,7 @@ export const AnimationOpacity = ({ children, refViewport }: AnimationOpacityProp
     }, [scrollY, constants])
 
     return (
-        <div ref={refAnimation} className="transition-all duration-75ms" style={{ opacity: animation.opacity, transform: `translateY(${animation.translateY}px)` }}>
+        <div ref={refAnimation} className="transition-all duration-1000ms" style={{ opacity: animation.opacity, transform: `translateY(${animation.translateY}px)` }}>
             {children}
         </div>
     )

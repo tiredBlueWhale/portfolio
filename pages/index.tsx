@@ -23,7 +23,10 @@ const downloadsDummy: Downloads[] = [
 const sections: SectionModel[] = [
   {
     title: 'Color & Shape',
-    summary: 'A reaction game which places with the Stroop effect.',
+    summary: `
+      A simple to learn but hard to master reaction game in which the player gets a simple set of instructions that determen what color and shape to press.
+      Among other effects the stroop effect is used to trick the player into pressing the wrong cell.
+    `,
     more: '',
     backgroundColor: 'bg-blue-600',
     waveColor: 'fill-blue-600',

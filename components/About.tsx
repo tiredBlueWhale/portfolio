@@ -13,7 +13,7 @@ export const About = ({backgroundColor}: AboutProps) => {
                 <AnimationWrapper refViewport={refAbout} type="scroll-horizontal" speed={.8}>
                     <p className="text-white text-4xl sm:text-6xl text-center">
                         Hello | Hallo | Moi | 안녕 | やあ | Hola | Oi | 你好 | Salve<br />
-                        Let&apos;s dive in ^_^
+                        {/* Let&apos;s dive in ^_^ */}
                     </p>
                 </AnimationWrapper>
             </div>
