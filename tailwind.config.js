@@ -53,8 +53,8 @@ module.exports = {
         }
       },
       animation: {
-        swipeTop: 'swipeTop 1.0s 0s ease-in-out infinite both',
-        swipeBottom: 'swipeBottom 1.0s 0s ease-in-out infinite both',
+        swipeTop: 'swipeTop 1.0s 0s ease-in-out 1 both',
+        swipeBottom: 'swipeBottom 1.0s 0s ease-in-out 1 both',
         swipeChild: 'swipeChild 1.0s 0s ease-in-out infinite both',
         appearLogoTitle: 'appearTop 1.0s 0s ease-in-out 1 both',
         appearLogoLine: 'swipeLine 1.0s 0s ease-in-out 1 both',

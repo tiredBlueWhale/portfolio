@@ -54,12 +54,16 @@ export const Hero = ({ colorWaveBackground, colorWaveForeground }: HeroProps) =>
                 </div>
                 <div ref={refWavePlaceholder} className="flex-1" />
             </div>
-            <div className="relative animate-appearHero">
-                <div className="absolute inset-x-0 bottom-8 -z-20 animate-appearWaveLeft" style={{ height }}>
-                    <Wave waveColor={colorWaveBackground} index={0} />
+            <div className="relative">
+                <div className="absolute inset-x-0 bottom-8 -z-20 overflow-hidden">
+                    <div className="animate-appearWaveLeft" style={{ height }}>
+                        <Wave waveColor={colorWaveBackground} index={0} />
+                    </div>
                 </div>
-                <div className="absolute inset-x-0 bottom-0 z-0 animate-appearWaveRight" style={{ height }}>
-                    <Wave waveColor={colorWaveForeground} index={1} />
+                <div className="absolute inset-x-0 bottom-0 z-0 overflow-hidden">
+                    <div className="animate-appearWaveRight" style={{ height }}>
+                        <Wave waveColor={colorWaveForeground} index={1} />
+                    </div>
                 </div>
             </div>
         </>
