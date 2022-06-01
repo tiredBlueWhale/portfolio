@@ -1,13 +1,15 @@
 import { useEffect, useRef, useState } from "react";
-import { useScrollY } from "../utils";
-import { AnimationWrapperPropsShared } from "./AnimationWrapper";
+import { Children, RefViewport } from "../types";
+import { useIsMobile, useScrollY } from "../utils";
 
 export type AnimationHorizontalScrollProps = {
     rightToLeft?: boolean;
     speed?: number;
-} & AnimationWrapperPropsShared
+} & RefViewport & Children;
 
-export const AnimationHorizontalScroll = ({children, refViewport, rightToLeft, speed}: AnimationHorizontalScrollProps) => {
+export const AnimationHorizontalScroll = ({ children, refViewport, rightToLeft, speed }: AnimationHorizontalScrollProps) => {
+
+    const isMobile = useIsMobile();
 
     const scrollY = useScrollY();
     const [translateX, setTranslateX] = useState(0);
@@ -24,8 +26,10 @@ export const AnimationHorizontalScroll = ({children, refViewport, rightToLeft, s
 
     }, [scrollY, refViewport, refAnimation])
 
+    if (isMobile) return <>{children}</>;
+
     return (
-        <div ref={refAnimation} className="transition-transform	ease-linear sm:duration-150" style={{transform: `translateX(${translateX}px)`}}>
+        <div ref={refAnimation} className="transition-transform	ease-linear sm:duration-150" style={{ transform: `translateX(${translateX}px)` }}>
             {children}
         </div>
     );

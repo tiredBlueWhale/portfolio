@@ -7,6 +7,7 @@ export const useWindowSize = () => {
     });
 
     const handleResize = useCallback(() => {
+        console.log(window.innerWidth);
         setWindowSize({
             width: window.innerWidth,
             height: window.innerHeight,
@@ -14,8 +15,8 @@ export const useWindowSize = () => {
     }, [])
 
     useEffect(() => {
-        handleResize();
         window.addEventListener("resize", handleResize);
+        handleResize();
         return () => window.removeEventListener("resize", handleResize);
     }, [handleResize]);
     

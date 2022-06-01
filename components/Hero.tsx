@@ -12,13 +12,13 @@ export type HeroProps = {
 export const Hero = ({ colorWaveBackground, colorWaveForeground }: HeroProps) => {
     const windowSize = useWindowSize();
     const [height, setHeight] = useState(0);
-    const refWavePlaceholder = useRef(null);
+    const refWavePlaceholder = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         if (!refWavePlaceholder.current) return;
         const { clientHeight: height } = refWavePlaceholder.current;
         setHeight(height);
-    }, [refWavePlaceholder, windowSize])
+    }, [refWavePlaceholder.current?.clientHeight, windowSize])
 
     return (
         <>
@@ -27,7 +27,7 @@ export const Hero = ({ colorWaveBackground, colorWaveForeground }: HeroProps) =>
                 <div className="flex-none flex flex-col justify-center">
                     <div className="overflow-hidden">
                         <div className='animate-appearLogoImage'>
-                            <img src="tiredBlueWhale.png" alt="Tired Blue Whale Logo" className='block max-w-[80vw] w-auto max-h-[50vh] h-auto' />
+                            <img src="tiredBlueWhale.png" alt="Tired Blue Whale Logo" className='block max-w-[80vw] w-auto max-h-[50vh] h-auto m-auto' />
                         </div>
                     </div>
                     <div className="flex flex-col items-center px-8 text-white">
@@ -55,7 +55,7 @@ export const Hero = ({ colorWaveBackground, colorWaveForeground }: HeroProps) =>
                 <div ref={refWavePlaceholder} className="flex-1" />
             </div>
             <div className="relative">
-                <div className="absolute inset-x-0 bottom-8 -z-20 overflow-hidden">
+                <div className="absolute inset-x-0 bottom-5 -z-20 overflow-hidden">
                     <div className="animate-appearWaveLeft" style={{ height }}>
                         <Wave waveColor={colorWaveBackground} index={0} />
                     </div>

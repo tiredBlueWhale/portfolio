@@ -6,7 +6,7 @@ import { SectionProps } from './Section';
 import { LearnMore, Summary, Title } from './Text';
 import { Wave } from "./Wave";
 
-export const SectionMobile = ({ title, summary, more, backgroundColor, waveColor, images, ...props }: SectionProps) => {
+export const SectionMobile = ({ title, summary, more, backgroundColor, waveColor, imageRows, ...props }: SectionProps) => {
 
     const onReadMore = useCallback(() => console.log('Read more'), [])
 
@@ -26,11 +26,11 @@ export const SectionMobile = ({ title, summary, more, backgroundColor, waveColor
                     </Summary>
                 </div>
                 <div className='flex-1 pt-8 pb-4 flex flex-nowrap items-center overflow-x-scroll overflow-y-hidden snap-mandatory snap-x'>
-                    {images.map((image, index) => (
+                    {imageRows.map((row) => row.images.map(({ src }, index) => (
                         <div key={index} className='h-full w-screen flex-shrink-0 snap-center flex justify-center py-4'>
-                            <img key={index} src={image} className='object-contain' />
+                            <img src={src} className='object-contain' />
                         </div>
-                    ))}
+                    )))}
                 </div>
                 <div className='py-4'>
                     <LearnMore />

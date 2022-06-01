@@ -14,8 +14,20 @@ export type Children = {
     children: React.ReactNode;
 }
 
-export type IsRight = {
-    isRight: boolean;
+export type Speed = {
+    speed: number;
+}
+
+export type Translate = {
+    translate?: string;
+}
+
+export type ZIndex = {
+    zIndex?: number;
+}
+
+export type IsLeftToRight = {
+    isLeftToRight: boolean;
 }
 
 export type BackgroundColor = {
@@ -42,8 +54,17 @@ export type More = {
     more?: string;
 }
 
+export type Image = {
+    src: string
+} & Speed & Translate & ZIndex;
+
+export type ImageRow = {
+    justify: 'justify-start' | 'justify-center' | 'justify-end' | 'justify-between';
+    images: Image[];
+}
+
 export type Images = {
-    images: string[];
+    imageRows: ImageRow[];
 }
 
 export type MadeWithType = 'unity' | 'react-native';

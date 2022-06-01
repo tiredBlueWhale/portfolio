@@ -1,11 +1,10 @@
 import { useState, useRef, useEffect } from "react";
-import { Children } from "../types"
-import { useScrollY, useWindowSize } from "../utils";
-import { AnimationWrapperPropsShared } from "./AnimationWrapper"
+import { Children, RefViewport } from "../types"
+import { useIsMobile, useScrollY, useWindowSize } from "../utils";
 
 export type AnimationOpacityProps = {
     useViewportOffset?: boolean;
-} & AnimationWrapperPropsShared
+} & RefViewport & Children;
 
 type Constants = {
     translate: number,
@@ -15,16 +14,15 @@ type Constants = {
     animationBottomStart: number,
     animationBottomEnd: number
 }
-export const AnimationOpacity = ({ children, refViewport }: AnimationOpacityProps) => {
+export const AnimationFadeInOut = ({ children, refViewport }: AnimationOpacityProps) => {
+
+    const isMobile = useIsMobile();
+    
 
     const scrollY = useScrollY();
     const windowSize = useWindowSize();
-    const [animation, setAnimation] = useState({
-        opacity: 1,
-        translateY: 200,
-    });
+    const [animation, setAnimation] = useState({ opacity: 1, translateY: 0 });
     const [constants, setConstants] = useState<Constants>();
-
     const refAnimation = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -36,7 +34,7 @@ export const AnimationOpacity = ({ children, refViewport }: AnimationOpacityProp
         const animationDistance = windowSize.height * .25;
         const animationTopStart = offsetTopAnimation + offsetTopWrapper - windowSize.height * .8 + heightAnimation * .5;
         const animationTopEnd = animationTopStart + animationDistance;
-        const animationBottomEnd = animationTopStart + heigthWrapper;
+        const animationBottomEnd = offsetTopAnimation + offsetTopWrapper - windowSize.height * .8 + heightAnimation * .5 + heigthWrapper;
         const animationBottomStart = animationBottomEnd - animationDistance;
 
         setConstants({
@@ -47,13 +45,13 @@ export const AnimationOpacity = ({ children, refViewport }: AnimationOpacityProp
             animationBottomEnd,
             animationBottomStart,
         })
-    }, [refViewport, refAnimation, windowSize.height])
+    }, [refViewport.current, refAnimation.current, windowSize.height]);
 
     useEffect(() => {
         if (constants === undefined) return;
 
-        const {translate, animationDistance, animationTopStart, animationTopEnd, animationBottomEnd, animationBottomStart} = constants;
-
+        const { translate, animationDistance, animationTopStart, animationTopEnd, animationBottomEnd, animationBottomStart } = constants;
+        // console.log(scrollY, animationTopStart, animationTopEnd, animationBottomEnd, animationBottomStart)
         if (scrollY < animationTopStart) setAnimation({ opacity: 0, translateY: translate });
         else if (animationTopStart <= scrollY && scrollY <= animationTopEnd) {
             const progress = (scrollY - animationTopStart) / animationDistance;
@@ -64,7 +62,9 @@ export const AnimationOpacity = ({ children, refViewport }: AnimationOpacityProp
             setAnimation({ opacity: 1 - progress, translateY: -translate * progress });
         } else if (animationBottomEnd < scrollY) setAnimation({ opacity: 0, translateY: -translate });
         else setAnimation({ opacity: 1, translateY: 0 });
-    }, [scrollY, constants])
+    }, [scrollY, constants]);
+
+    if (isMobile) return <>{children}</>;
 
     return (
         <div ref={refAnimation} className="transition-all duration-1000ms" style={{ opacity: animation.opacity, transform: `translateY(${animation.translateY}px)` }}>

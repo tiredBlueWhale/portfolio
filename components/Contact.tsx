@@ -1,7 +1,5 @@
 import { useRef } from "react";
-import { AnimationWrapper } from "./AnimationWrapper";
 import { Card } from "./Card"
-import { Wave } from "./Wave"
 
 type ContactData = {
     href: string;

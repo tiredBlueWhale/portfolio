@@ -1,63 +1,85 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { useWindowSize } from '../utils';
-import { AnimationWrapper } from './AnimationWrapper';
+import { useScrollY, useWindowSize } from '../utils';
+import { AnimationFadeInOut } from './AnimationFadeInOut';
+import { AnimationParallaxScroll } from './AnimationParallaxScroll';
 import { Card } from './Card';
 import { Resources } from './Resources';
 import { SectionProps } from './Section';
 import { LearnMore, Summary, Title } from './Text';
 
-export const SectionDesktop = ({ isRight, title, summary, more, backgroundColor, waveColor, images, ...props }: SectionProps) => {
+export const SectionDesktop = ({ isLeftToRight, title, summary, more, backgroundColor, waveColor, imageRows, ...props }: SectionProps) => {
 
     const windowSize = useWindowSize();
     const onReadMore = useCallback(() => console.log('Read more'), [])
 
-    const [stickyTop, setStickyTop] = useState(0);
-    const refInfo = useRef(null);
-    const refAnimation = useRef(null);
+    const [infoStickyTop, setInfoStickyTop] = useState(0);
+    const [imageStickyTop, setImageStickyTop] = useState(0);
+    const refInfo = useRef<HTMLDivElement>(null);
+    const refAnimation = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         if (!refInfo.current) return;
         const { clientHeight: heigth } = refInfo.current;
-        const stickyTop = windowSize.height / 2 - heigth / 2;
-        setStickyTop(stickyTop);
-    }, [refInfo, windowSize.height])
+        const infoStickyTop = windowSize.height / 2 - heigth / 2;
+        setInfoStickyTop(infoStickyTop);
+    }, [refInfo.current?.clientHeight, windowSize.height])
+
+    useEffect(() => {
+        if (!refInfo.current) return;
+        const { clientHeight: heightInfo } = refInfo.current;
+        const imageStickyTop = infoStickyTop + heightInfo;
+        setImageStickyTop(imageStickyTop * .25);
+    }, [refInfo.current?.clientHeight, infoStickyTop])
 
     return (
         <Card waveColor={waveColor}>
-            <div ref={refAnimation} className={`min-h-screen max-w-screen-2xl py-12 flex justify-center items-start ${isRight ? 'flex-row-reverse' : 'flex-row'} m-auto`}>
-                <div ref={refInfo} className='basis-5/12 max-w-md sticky px-12' style={{ top: `${stickyTop}px` }}>
+            <div ref={refAnimation} className={`max-w-screen-xl py-12 flex justify-center items-start ${isLeftToRight ? 'flex-row-reverse' : 'flex-row'} m-auto pb-[30vh]`}>
+                <div ref={refInfo} className='sticky max-w-md px-12' style={{ top: `${infoStickyTop}px` }}>
                     <div className='mb-4'>
-                        <AnimationWrapper type='opacity' refViewport={refAnimation}>
+                        <AnimationFadeInOut refViewport={refAnimation}>
                             <Title>
                                 {title}
                             </Title>
-                        </AnimationWrapper>
+                        </AnimationFadeInOut>
                     </div>
                     <div className='mb-4'>
-                        <AnimationWrapper type='opacity' refViewport={refAnimation}>
+                        <AnimationFadeInOut refViewport={refAnimation}>
                             <Summary>
                                 {summary}
                             </Summary>
 
-                        </AnimationWrapper>
+                        </AnimationFadeInOut>
                     </div>
                     <div className='mb-4' onClick={onReadMore}>
-                        <AnimationWrapper type='opacity' refViewport={refAnimation}>
+                        <AnimationFadeInOut refViewport={refAnimation}>
                             <LearnMore />
-                        </AnimationWrapper>
+                        </AnimationFadeInOut>
                     </div>
                     <div className='mb-4'>
-                        <AnimationWrapper type='opacity' refViewport={refAnimation}>
+                        <AnimationFadeInOut refViewport={refAnimation}>
                             <Resources {...props} />
-                        </AnimationWrapper>
+                        </AnimationFadeInOut>
                     </div>
                 </div>
-                <div className={`basis-7/12 flex flex-wrap justify-center ${isRight ? 'flex-row-reverse' : 'flex-row'}`}>
-                    {images.map((image, index) => (
-                        <img key={index} src={image} className='object-contain' />
+                <div className='shrink h-full px-8 min-w-0 max-w-' style={{paddingTop: imageStickyTop}}>
+                    {imageRows.map(({ justify, images }, index) => (
+                        <div key={index} className={`w-full flex ${justify} ${isLeftToRight ? 'flex-row-reverse' : 'flex-row'}`} >
+                            {
+                                images.map(({ src, speed, translate }, index) => (
+                                    <AnimationParallaxScroll key={index} refViewport={refAnimation} speed={speed}>
+                                        <div className={`max-h-screen min-w-0 flex ease-in-out duration-300`}>
+                                            <div className='m-auto relative' style={{ transform: translate }}>
+                                                <img key={index} src={src} className='block max-h-full max-w-full w-auto h-auto'/>
+                                            </div>
+                                        </div>
+                                    </AnimationParallaxScroll>
+                                ))
+                            }
+                        </div>
                     ))}
                 </div>
             </div>
-        </Card>
+
+        </Card >
     )
 }

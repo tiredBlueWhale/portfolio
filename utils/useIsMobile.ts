@@ -7,6 +7,7 @@ export const useIsMobile = () => {
 
     useEffect(() => {
         // tailwind default sm: size 640px
+        console.log(windowSize.width, window.innerWidth);
         setIsMobile(windowSize.width < 640)
     }, [windowSize.width])
 

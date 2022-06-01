@@ -1,12 +1,47 @@
 import type { NextPage } from 'next'
 import Head from 'next/head';
-import Html from 'next/head';
-import { useEffect } from 'react';
 import { About, Contact, Footer, Hero, Section, SectionModel, Submarine } from '../components'
-import { ResourcesProps } from '../components/Resources';
-import { Downloads, MadeWithType } from '../types';
+import { Downloads, MadeWithType, ImageRow } from '../types';
 
-const mockImages = ['iphone.png', 'iphone.png', 'iphone.png'];
+const mockImageRowIphones = {
+
+}
+
+const mockImages: ImageRow[] =
+  [
+    {
+      justify: 'justify-start',
+      images: [
+        {
+          src: 'iphone.png',
+          speed: .2,
+          translate: 'translate(10%, 0px)',
+        },
+        {
+          src: 'iphone.png',
+          speed: .5,
+          translate: '',
+        },
+        {
+          src: 'iphone.png',
+          speed: .7,
+          translate: 'translate(-10%, 20vh)',
+        },
+
+      ]
+    },
+    {
+      justify: 'justify-center',
+      images: [
+        {
+          src: 'ipad.png',
+          speed: .6,
+        }
+      ]
+    }
+  ];
+
+
 const madeWithDummy: MadeWithType[] = ['unity'];
 const downloadsDummy: Downloads[] = [
   {
@@ -30,7 +65,31 @@ const sections: SectionModel[] = [
     more: '',
     backgroundColor: 'bg-blue-600',
     waveColor: 'fill-blue-600',
-    images: mockImages,
+    imageRows: [
+      {
+        justify: 'justify-start',
+        images: [
+          {
+            src: 'iphone_landscape.png',
+            speed: .2,
+          },
+          {
+            src: 'iphone_landscape.png',
+            speed: .5,
+            translate: 'translate(-10%, 0px)',
+          }
+        ]
+      },
+      {
+        justify: 'justify-center',
+        images: [
+          {
+            src: 'ipad_landscape.png',
+            speed: .6,
+          }
+        ]
+      }
+    ],
     madeWith: madeWithDummy,
     downloads: downloadsDummy,
   },
@@ -43,20 +102,76 @@ const sections: SectionModel[] = [
     more: '',
     backgroundColor: 'bg-blue-700',
     waveColor: 'fill-blue-700',
-    images: mockImages,
+    imageRows: [
+      {
+        justify: 'justify-start',
+        images: [
+          {
+            src: 'iphone.png',
+            speed: .2,
+            translate: 'translate(10%, 0px)',
+          },
+          {
+            src: 'iphone.png',
+            speed: .5,
+            translate: '',
+          },
+          {
+            src: 'iphone.png',
+            speed: .7,
+            translate: 'translate(-10%, 0vh)',
+          },
+
+        ]
+      },
+      {
+        justify: 'justify-center',
+        images: [
+          {
+            src: 'ipad.png',
+            speed: .6,
+          }
+        ]
+      }
+    ],
     madeWith: madeWithDummy,
     downloads: downloadsDummy,
   },
-  // {
-  //   title: 'Stay Inside',
-  //   summary: 'It is simple, it is easy and super duper.',
-  //   more: '',
-  //   backgroundColor: 'bg-blue-800',
-  //   waveColor: 'fill-blue-800',
-  //   images: mockImages,
-  //   madeWith: madeWithDummy,
-  //   downloads: downloadsDummy,
-  // },
+  {
+    title: 'Stay Inside',
+    summary: 'Try to stay inside the colored ring, which will change diretions.',
+    more: '',
+    backgroundColor: 'bg-blue-800',
+    waveColor: 'fill-blue-800',
+    imageRows: [
+      {
+        justify: 'justify-center',
+        images: [
+          {
+            src: 'iphone.png',
+            speed: .6,
+          }
+        ]
+      },
+      {
+        justify: 'justify-start',
+        images: [
+          {
+            src: 'iphone.png',
+            speed: .2,
+            translate: 'translate(10%, 0px)',
+          },
+          {
+            src: 'iphone.png',
+            speed: .5,
+            translate: '',
+          },
+        ]
+      },
+    ],
+    madeWith: madeWithDummy,
+    downloads: downloadsDummy,
+  },
 ]
 
 const Home: NextPage = () => {
@@ -67,7 +182,7 @@ const Home: NextPage = () => {
       </Head>
       <Hero colorWaveBackground='fill-blue-600' colorWaveForeground='fill-blue-500' />
       <About backgroundColor='bg-blue-500' />
-      {sections.map(((section, index) => <Section key={index} isRight={index % 2 === 1} {...section} />))}
+      {sections.map(((section, index) => <Section key={index} isLeftToRight={index % 2 === 1} {...section} />))}
       <Contact />
       <Footer />
       {/* <Submarine /> */}
