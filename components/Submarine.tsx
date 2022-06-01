@@ -8,13 +8,10 @@ export const Submarine = () => {
     const [height, setHeight] = useState(0);
     const [isVisible, setIsVisible] = useState(false);
     const refContainer = useRef(null);
-    console.log(document.body.scrollHeight);
 
     useEffect(() => {
         if (!refContainer.current) return;
         const { clientHeight: heightTotal } = refContainer.current;
-        // scrollY / document.body.scrollHeight
-        // console.log(scrollY / document.body.scrollHeight);
         const scrollPercentageOfPage = (scrollY - window.innerHeight) / (document.body.scrollHeight - 2 * window.innerHeight);
         setIsVisible(0 <= scrollPercentageOfPage)
         setHeight(heightTotal * scrollPercentageOfPage);

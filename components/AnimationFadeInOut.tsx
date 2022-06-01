@@ -43,7 +43,7 @@ export const AnimationFadeInOut = ({ children, refViewport }: AnimationOpacityPr
             animationBottomEnd,
             animationBottomStart,
         })
-    }, [refViewport.current?.clientHeight, refViewport.current?.offsetTop, refViewport.current?.clientHeight, refViewport.current?.offsetTop, windowSize.height]);
+    }, [refViewport, refViewport.current?.clientHeight, refViewport.current?.offsetTop, refAnimation.current?.clientHeight, refAnimation.current?.offsetTop, windowSize.height]);
 
     useEffect(() => {
         if (constants === undefined) return;

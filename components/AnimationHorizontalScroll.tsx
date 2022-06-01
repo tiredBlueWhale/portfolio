@@ -24,7 +24,7 @@ export const AnimationHorizontalScroll = ({ children, refViewport, rightToLeft, 
         const translateX = rightToLeft ? scrollY - center : center - scrollY;
         setTranslateX(translateX * (speed || 1));
 
-    }, [scrollY, refViewport, refAnimation])
+    }, [scrollY, refViewport, refAnimation, rightToLeft, speed])
 
     if (isMobile) return <>{children}</>;
 

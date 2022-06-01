@@ -4,7 +4,7 @@ import { useIsMobile, useScrollY, useWindowSize } from "../utils";
 
 
 export type AnimationParallaxScrollProps = RefViewport & Children & Speed;
-export const AnimationParallaxScroll = ({ children, refViewport, speed}: AnimationParallaxScrollProps) => {
+export const AnimationParallaxScroll = ({ children, speed}: AnimationParallaxScrollProps) => {
 
     const isMobile = useIsMobile();
     const windowSize = useWindowSize();
@@ -13,17 +13,14 @@ export const AnimationParallaxScroll = ({ children, refViewport, speed}: Animati
     const refAnimation = useRef<HTMLDivElement>(null);
     
     useEffect(() => {
-        if (!refViewport.current || !refAnimation.current) return;
+        if (!refAnimation.current) return;
         const { offsetTop: offsetTopAnimation, clientHeight: heightAnimation, } = refAnimation.current;
-        const { offsetTop: offsetTopWrapper, clientHeight: heigthWrapper } = refViewport.current;
         const center = offsetTopAnimation - windowSize.height / 2 + heightAnimation / 2;
-        // console.log(scrollY, offsetTopWrapper, offsetTopAnimation, center);
         const position = center - scrollY
 
         const translateY = position * speed;
-        console.log( translateY);
         setAnimation({opacity: 1, translateY})
-    }, [scrollY, windowSize.height, refAnimation.current?.offsetTop, refAnimation.current?.clientHeight])
+    }, [scrollY, windowSize.height, refAnimation.current?.offsetTop, refAnimation.current?.clientHeight, speed])
 
     if (isMobile) return <>{children}</>;
 

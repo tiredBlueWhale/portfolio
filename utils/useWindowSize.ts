@@ -7,7 +7,6 @@ export const useWindowSize = () => {
     });
 
     const handleResize = useCallback(() => {
-        console.log(window.innerWidth);
         setWindowSize({
             width: window.innerWidth,
             height: window.innerHeight,
