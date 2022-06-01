@@ -18,7 +18,7 @@ export const Hero = ({ colorWaveBackground, colorWaveForeground }: HeroProps) =>
         if (!refWavePlaceholder.current) return;
         const { clientHeight: height } = refWavePlaceholder.current;
         setHeight(height);
-    }, [refWavePlaceholder.current?.clientHeight, windowSize])
+    }, [refWavePlaceholder.current?.clientHeight, windowSize.height])
 
     return (
         <>
