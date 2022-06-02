@@ -37,7 +37,7 @@ export const Contact = () => {
 
                 <div className="flex-1 flex flex-col items-center">
                     <AnimationHorizontalScrollParent refViewport={refAnimation} speed={1} offset={1} direction='bottom'>
-                        <img src="tiredBlueWhale.png" alt="Tired Blue Whale Logo Large" className='block h-20 sm:h-32 hover:sm:h-40 ease-in-out duration-300 max-w-full pt-2 -scale-x-100' />
+                        <img src="tiredBlueWhale.png" alt="Tired Blue Whale Logo Large" className='block h-20 sm:h-32 hover:sm:h-40 ease-in-out duration-300 max-w-full pt-2 -scale-x-100 m-auto' />
                         <div className="pt-8 animate-bounce flex flex-col items-center opacity-70">
                             &uarr;
                             <span>
