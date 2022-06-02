@@ -21,7 +21,7 @@ export const Title = ({ children }: Children) => (
     </div>
 )
 
-export const Summary = ({ children }: Children) => <p className='text-md sm:text-xl text-center line-clamp-5 md:line-clamp-none'>{children}</p>
+export const Summary = ({ children }: Children) => <p className='text-md sm:text-lg text-center line-clamp-5 md:line-clamp-none'>{children}</p>
 export const LearnMore = () => (
     <Link href={{
         pathname: '/learn',

@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     fontFamily: {
       // 'sans': ['"Fira-Mono"'],
-      'sans': ['Inter'],
+      // 'sans': ['Inter'],
+      'sans': ['Ultra'],
       'serif': ['ui-serif', 'Georgia'],
       'mono': ['ui-monospace', 'SFMono-Regular'],
     },
