@@ -26,14 +26,17 @@ export const AnimationFadeInOut = ({ children, refViewport }: AnimationOpacityPr
     useEffect(() => {
         if (!refViewport.current || !refAnimation.current) return;
 
-        const { offsetTop: offsetTopAnimation, clientHeight: heightAnimation, } = refAnimation.current;
+        const { offsetTop: offsetTopAnimation, clientHeight: heightAnimation, offsetParent: parent} = refAnimation.current;
         const { offsetTop: offsetTopWrapper, clientHeight: heigthWrapper } = refViewport.current;
         const translate = windowSize.height * .25;
         const animationDistance = windowSize.height * .25;
         const animationTopStart = offsetTopWrapper + offsetTopAnimation - windowSize.height * .8 + heightAnimation * .5;
         const animationTopEnd = animationTopStart + animationDistance;
-        const animationBottomEnd = offsetTopWrapper + heigthWrapper + offsetTopAnimation - windowSize.height * .7 + heightAnimation * .5;
-        const animationBottomStart = animationBottomEnd - animationDistance;
+
+        let offsetBottom = 0;
+        if (parent !== null) offsetBottom = (parent as HTMLElement).offsetHeight - offsetTopAnimation - heightAnimation / 2;
+        const animationBottomStart = offsetTopWrapper + heigthWrapper - offsetBottom - windowSize.height * .3;
+        const animationBottomEnd = animationBottomStart + animationDistance;
 
         setConstants({
             translate,

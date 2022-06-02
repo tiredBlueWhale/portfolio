@@ -32,54 +32,52 @@ export const SectionDesktop = ({ isLeftToRight, title, summary, more, background
     }, [refInfo.current?.clientHeight, infoStickyTop])
 
     return (
-        <Card waveColor={waveColor}>
-            <div ref={refAnimation} className={`max-w-screen-xl min-h-screen py-12 flex justify-center items-start ${isLeftToRight ? 'flex-row-reverse' : 'flex-row'} m-auto`}>
-                <div ref={refInfo} className='sticky max-w-sm lg:max-w-md px-12' style={{ top: `${infoStickyTop}px` }}>
-                    <div className='mb-4'>
-                        <AnimationFadeInOut refViewport={refAnimation}>
-                            <Title>
-                                {title}
-                            </Title>
-                        </AnimationFadeInOut>
-                    </div>
-                    <div className='mb-4'>
-                        <AnimationFadeInOut refViewport={refAnimation}>
-                            <Summary>
-                                {summary}
-                            </Summary>
-
-                        </AnimationFadeInOut>
-                    </div>
-                    <div className='mb-4' onClick={onReadMore}>
-                        <AnimationFadeInOut refViewport={refAnimation}>
-                            <LearnMore />
-                        </AnimationFadeInOut>
-                    </div>
-                    <div className='mb-4'>
-                        <AnimationFadeInOut refViewport={refAnimation}>
-                            <Resources {...props} />
-                        </AnimationFadeInOut>
-                    </div>
+        <div ref={refAnimation} className={`max-w-screen-xl min-h-screen py-12 flex justify-center items-start ${isLeftToRight ? 'flex-row-reverse' : 'flex-row'} m-auto`}>
+            <div ref={refInfo} className='sticky flex-none w-[500px] max-w-xl px-12' style={{ top: `${infoStickyTop}px` }}>
+                <div className='mb-4'>
+                    <AnimationFadeInOut refViewport={refAnimation}>
+                        <Title>
+                            {title}
+                        </Title>
+                    </AnimationFadeInOut>
                 </div>
-                <div className='shrink h-full px-8 min-w-0 max-w-' style={{paddingTop: imageStickyTop}}>
-                    {imageRows.map(({ justify, images }, index) => (
-                        <div key={index} className={`w-full flex ${justify} ${isLeftToRight ? 'flex-row-reverse' : 'flex-row'}`} >
-                            {
-                                images.map(({ src, speed, translate }, index) => (
-                                    <AnimationParallaxScroll key={index} refViewport={refAnimation} speed={speed}>
-                                        <div className={`max-h-screen min-w-0 flex ease-in-out duration-300`}>
-                                            <div className='m-auto' style={{ transform: translate }}>
-                                                <img key={index} src={src} className='block max-h-screen max-w-full w-auto h-auto'/>
-                                            </div>
-                                        </div>
-                                    </AnimationParallaxScroll>
-                                ))
-                            }
-                        </div>
-                    ))}
+
+                <AnimationFadeInOut refViewport={refAnimation}>
+                    <div className='mb-4'>
+                        <Summary>
+                            {summary}
+                        </Summary>
+                    </div>
+                </AnimationFadeInOut>
+
+                <div className='mb-4' onClick={onReadMore}>
+                    <AnimationFadeInOut refViewport={refAnimation}>
+                        <LearnMore />
+                    </AnimationFadeInOut>
+                </div>
+                <div className='mb-4'>
+                    <AnimationFadeInOut refViewport={refAnimation}>
+                        <Resources {...props} />
+                    </AnimationFadeInOut>
                 </div>
             </div>
-
-        </Card >
+            <div className='shrink h-full px-8 min-w-0 max-w-' style={{ paddingTop: imageStickyTop }}>
+                {imageRows.map(({ justify, images }, index) => (
+                    <div key={index} className={`w-full flex ${justify} ${isLeftToRight ? 'flex-row-reverse' : 'flex-row'}`} >
+                        {
+                            images.map(({ src, speed, translate }, index) => (
+                                <AnimationParallaxScroll key={index} refViewport={refAnimation} speed={speed}>
+                                    <div className={`max-h-screen min-w-0 flex ease-in-out duration-300`}>
+                                        <div className='m-auto' style={{ transform: translate }}>
+                                            <img key={index} src={src} className='block max-h-screen max-w-full w-auto h-auto' />
+                                        </div>
+                                    </div>
+                                </AnimationParallaxScroll>
+                            ))
+                        }
+                    </div>
+                ))}
+            </div>
+        </div>
     )
 }

@@ -113,11 +113,6 @@ const sections: SectionModel[] = [
           },
           {
             src: 'iphone.png',
-            speed: .5,
-            translate: '',
-          },
-          {
-            src: 'iphone.png',
             speed: .7,
             translate: 'translate(-10%, 0vh)',
           },

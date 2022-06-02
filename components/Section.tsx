@@ -13,7 +13,7 @@ export const Section = ({...props}: SectionProps) => {
     const isMobile = useIsMobile();
 
     return (
-        <Card waveColor={props.waveColor}>
+        <Card {...props} >
             <div className={`${props.backgroundColor}`}>
                 {isMobile ? <SectionMobile {...props} /> : <SectionDesktop {...props} />}
             </div>
