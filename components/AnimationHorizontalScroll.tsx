@@ -48,11 +48,9 @@ export const AnimationHorizontalScrollParent = ({ children, refViewport, speed, 
     useEffect(() => {
         if (!refViewport || !refViewport.current) return;
 
-        console.log(direction);
         const { offsetTop: offsetTopWrapper, clientHeight: heigthTopWrapper, } = refViewport.current;
         const center = offsetTopWrapper + heigthTopWrapper - windowSize.height * offset;
         const translate = ['left', 'top'].includes(direction) ? scrollY - center : center - scrollY;
-        console.log(translate);
         const translateDirection = ['left', 'right'].includes(direction) ? 'translateX' : 'translateY';
         setTranslateDirection(translateDirection);
         setTranslate(translate * speed);

@@ -33,7 +33,7 @@ export const SectionDesktop = ({ isLeftToRight, title, summary, more, background
 
     return (
         <div ref={refAnimation} className={`max-w-screen-xl min-h-screen py-12 flex justify-center items-start ${isLeftToRight ? 'flex-row-reverse' : 'flex-row'} m-auto`}>
-            <div ref={refInfo} className='sticky flex-none w-[500px] max-w-xl px-12' style={{ top: `${infoStickyTop}px` }}>
+            <div ref={refInfo} className='sticky flex-none w-[400px] sm:w-[450px] md:w-[500px] lg:w-[550px] px-12' style={{ top: `${infoStickyTop}px` }}>
                 <div className='mb-4'>
                     <AnimationFadeInOut refViewport={refAnimation}>
                         <Title>

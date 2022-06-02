@@ -23,7 +23,7 @@ export const Contact = () => {
 
     return (
         <Card waveColor="fill-blue-900" index={0} title='Contact'>
-            <div ref={refAnimation} className="h-screen bg-blue-900 flex flex-col justify-center items-center">
+            <div ref={refAnimation} className="h-screen bg-blue-900 flex flex-col justify-center items-center overflow-hidden">
                 <div className="flex-1" />
                 {
                     contactData.map(({ href, text }, index) => (
