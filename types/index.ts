@@ -69,7 +69,17 @@ export type Images = {
 
 export type MadeWithType = 'unity' | 'react-native';
 export type DownloadType = 'appstore' | 'playstore' | 'git';
-export type Downloads = {
+export type Download = {
     type: DownloadType;
     url: string;
 }
+
+export type MadeWith = {
+    madeWith: MadeWithType[];
+}
+
+export type Downloads = {
+    downloads: Download[]
+}
+
+export type SectionModel = Title & Summary & More & Images & BackgroundColor & WaveColor & MadeWith & Downloads;

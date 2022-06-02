@@ -21,7 +21,7 @@ export const Contact = () => {
     const refAnimation = useRef(null);
 
     return (
-        <Card waveColor="fill-blue-900" index={0}>
+        <Card waveColor="fill-blue-900" index={0} title='Contact'>
             <div ref={refAnimation} className="h-screen bg-blue-900 flex flex-col justify-center items-center">
                 <div className="flex-1" />
                 {

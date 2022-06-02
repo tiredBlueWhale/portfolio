@@ -1,6 +1,5 @@
-import { Children, Downloads, MadeWithType } from "../types";
+import { Download, Downloads, MadeWith, MadeWithType } from "../types";
 
-const Wrapper = ({ children }: Children) => <div className="flex flex-wrap items-center justify-center">{children}</div>
 const MadeWith = ({ type }: { type: MadeWithType }) => {
     switch (type) {
         case 'unity':
@@ -13,7 +12,7 @@ const MadeWith = ({ type }: { type: MadeWithType }) => {
     }
 }
 
-const Download = ({ type }: Downloads) => {
+const Download = ({ type }: Download) => {
     switch (type) {
         case 'appstore':
             return <img src="Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Appstore Download" className='block h-full m-auto max-w-full' />;
@@ -27,10 +26,7 @@ const Download = ({ type }: Downloads) => {
     }
 }
 
-export type ResourcesProps = {
-    madeWith: MadeWithType[];
-    downloads: Downloads[]
-}
+export type ResourcesProps = MadeWith & Downloads;
 
 export const Resources = ({ madeWith, downloads }: ResourcesProps) => {
     return (
