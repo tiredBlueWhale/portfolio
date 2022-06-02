@@ -1,13 +1,20 @@
 import { RefObject } from "react";
 
-export type AnimationTypes = 'opacity' | 'slide-in' | 'paint' | 'scroll-horizontal';
+export type DirectionTypes = 'top' | 'right' | 'bottom' | 'left';
+export type DirectionType = {
+    direction: DirectionTypes;
+}
 
-export type AnimationType = {
-    type?: AnimationTypes;
+export type RefViewportOptional = {
+    refViewport?: RefObject<HTMLDivElement>;
 }
 
 export type RefViewport = {
     refViewport: RefObject<HTMLDivElement>;
+}
+
+export type Offset = {
+    offset: number;
 }
 
 export type Children = {
@@ -22,12 +29,8 @@ export type Translate = {
     translate?: string;
 }
 
-export type ZIndex = {
-    zIndex?: number;
-}
-
 export type IsLeftToRight = {
-    isLeftToRight: boolean;
+    isLeftToRight?: boolean;
 }
 
 export type BackgroundColor = {
@@ -56,7 +59,7 @@ export type More = {
 
 export type Image = {
     src: string
-} & Speed & Translate & ZIndex;
+} & Speed & Translate;
 
 export type ImageRow = {
     justify: 'justify-start' | 'justify-center' | 'justify-end' | 'justify-between';

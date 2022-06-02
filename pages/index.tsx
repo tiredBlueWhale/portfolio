@@ -4,8 +4,6 @@ import { About, Contact, Footer, Hero, Section} from '../components'
 import { sections } from '../data';
 
 const Home: NextPage = () => {
-  console.log(sections);
-
   return (
     <>
       <Head>

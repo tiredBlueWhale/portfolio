@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Children } from "../types"
 
 export const LogoTitle = ({ children }: Children) => (
@@ -22,11 +23,16 @@ export const Title = ({ children }: Children) => (
 
 export const Summary = ({ children }: Children) => <p className='text-md sm:text-xl text-center line-clamp-5 md:line-clamp-none'>{children}</p>
 export const LearnMore = () => (
-    <div className='flex justify-center items-center'>
-        <div className="border-2 border-white hover:bg-white ease-in-out duration-300 px-2 py-1 rounded-sm">
-            <h1 className='text-2xl sm:text-3xl bold hover:text-black ease-in-out duration-300'>
-                Learn More
-            </h1>
+    <Link href={{
+        pathname: '/learn',
+        query: {section: '123'}
+    }}>
+        <div className='flex justify-center items-center'>
+            <div className="border-2 border-white hover:bg-white ease-in-out duration-300 px-2 py-1 rounded-sm">
+                <h1 className='text-2xl sm:text-3xl bold hover:text-black ease-in-out duration-300'>
+                    Learn More
+                </h1>
+            </div>
         </div>
-    </div>
+    </Link>
 )

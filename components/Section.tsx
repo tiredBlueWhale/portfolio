@@ -10,8 +10,6 @@ export const Section = ({...props}: SectionProps) => {
     // To achieve the mobile and desktop view only css is not enough
     const isMobile = useIsMobile();
 
-    console.log(props.backgroundColor);
-
     return (
         <Card {...props} >
             <div className={`${props.backgroundColor}`}>

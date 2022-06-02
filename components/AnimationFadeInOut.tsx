@@ -2,9 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Children, RefViewport } from "../types"
 import { useIsMobile, useScrollY, useWindowSize } from "../utils";
 
-export type AnimationOpacityProps = {
-    useViewportOffset?: boolean;
-} & RefViewport & Children;
+export type AnimationOpacityProps = RefViewport & Children;
 
 type Constants = {
     translate: number,
@@ -46,7 +44,7 @@ export const AnimationFadeInOut = ({ children, refViewport }: AnimationOpacityPr
             animationBottomEnd,
             animationBottomStart,
         })
-    }, [refViewport, refViewport.current?.clientHeight, refViewport.current?.offsetTop, refAnimation.current?.clientHeight, refAnimation.current?.offsetTop, windowSize.height]);
+    }, [refViewport, refViewport?.current?.clientHeight, refViewport?.current?.offsetTop, refAnimation.current?.clientHeight, refAnimation.current?.offsetTop, windowSize.height]);
 
     useEffect(() => {
         if (constants === undefined) return;
