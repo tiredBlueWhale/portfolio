@@ -28,9 +28,11 @@ export const Contact = () => {
                 {
                     contactData.map(({ href, text }, index) => (
                         <AnimationHorizontalScrollParent key={index} refViewport={refAnimation} speed={1} offset={1} direction={index % 2 === 0 ? 'left' : 'right'}>
-                            <a className="uppercase text-3xl sm:text-5xl hover:sm:text-6xl ease-in-out duration-300 py-2 sm:py-4" href={href}>
-                                {text}
-                            </a>
+                            <div className="py-2 sm:py-4">
+                                <a className="uppercase text-3xl sm:text-5xl hover:sm:text-6xl ease-in-out duration-300" href={href}>
+                                    {text}
+                                </a>
+                            </div>
                         </AnimationHorizontalScrollParent>
                     ))
                 }
