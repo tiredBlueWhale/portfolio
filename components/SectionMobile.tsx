@@ -13,19 +13,19 @@ export const SectionMobile = ({ title, summary, more, backgroundColor, waveColor
     return (
         <div className='h-screen w-screen flex flex-col'>
             <div className='flex-none sticky top-0'>
-                <div className={`${backgroundColor} drop-shadow flex justify-center items-center pt-4 pb-3 px-2`}>
+                <div className={`${backgroundColor} flex justify-center items-center pt-2 pb-1 px-2`}>
                     <Title>
                         {title}
                     </Title>
                 </div>
             </div>
-            <div className='flex-1 pt-4 pb-12 flex flex-col justify-start min-h-0'>
+            <div className='flex-1 pt-2 pb-12 flex flex-col justify-start min-h-0'>
                 <div className='px-4' onClick={onReadMore}>
                     <Summary>
                         {summary}
                     </Summary>
                 </div>
-                <div className='flex-1 flex flex-nowrap items-center overflow-x-scroll overflow-y-hidden snap-mandatory snap-x'>
+                <div className='flex-1 py-2 flex flex-nowrap items-center overflow-x-scroll overflow-y-hidden snap-mandatory snap-x'>
                     {imageRows.map((row) => row.images.map(({ src }, index) => (
                         <div key={index} className='h-full w-screen flex-shrink-0 snap-center flex justify-center p-2'>
                             <img src={src} className='object-contain' />

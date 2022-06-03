@@ -15,7 +15,7 @@ export const LogoSubtitle = ({ children }: Children) => (
 
 export const Title = ({ children }: Children) => (
     <div className='flex justify-center items-baseline'>
-        <span className='text-2xl sm:text-5xl bold text-center'>
+        <span className='text-3xl sm:text-5xl bold text-center'>
             {children}
         </span>
     </div>
