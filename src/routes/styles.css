@@ -1,0 +1,29 @@
+@import '@fontsource/martian-mono';
+@tailwind base;
+
+@layer base {
+
+	html {
+		@apply bg-gray-900
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	span,
+	a,
+	li {
+		@apply text-white;
+	}
+
+	a {
+		@apply underline;
+	}
+}
+
+@tailwind components;
+@tailwind utilities;
