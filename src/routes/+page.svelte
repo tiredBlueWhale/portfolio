@@ -4,7 +4,7 @@
 	import SectionContent from './SectionContent.svelte';
 	import SectionText from './SectionText.svelte';
 
-	import IPhone from './iPhone.svelte';
+	import IPhone from './IPhone.svelte';
 	import SectionDevice from './SectionDevice.svelte';
 	import Android from './Android.svelte';
 	import Laptop from './Laptop.svelte';
