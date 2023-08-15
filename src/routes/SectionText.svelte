@@ -1,6 +1,8 @@
 <script>
 	import apple from '$lib/images/apple-badge.svg';
 	import google from '$lib/images/google-play-badge.png';
+	import { base } from '$app/paths';
+
 	export let title = 'Stay Inside';
 	export let subTitle = 'Fast passed hyper casual mobile game';
 	export let description =
@@ -13,7 +15,7 @@
 	<h1 class="text-xl lg:text-6xl font-bold">{title}</h1>
 	<h2 class="text-lg lg:text-3xl pb-1 lg:pb-4">{subTitle}</h2>
 	<p class="text-base lg:text-xl pb-1 lg:pb-4">{description}</p>
-	<a class="text-base lg:text-xl pb-2 lg:pb-8" href="/more">Learn More</a>
+	<a class="text-base lg:text-xl pb-2 lg:pb-8" href="{base}/more">Learn More</a>
 	<div class="flex flex-wrap gap-2 lg:gap-4">
 		<a href="https://www.google.com"
 			><img class="h-11 lg:h-16 object-contain" alt="Download on the App Store" src={apple} /></a
@@ -26,6 +28,6 @@
 
 	<div class="flex gap-4">
 		<a class="text-xs lg:text-base" href="https://www.google.com">GitHub</a>
-		<a class="text-xs lg:text-base" href="/privacy">Privacy Policy</a>
+		<a class="text-xs lg:text-base" href="{base}/privacy">Privacy Policy</a>
 	</div>
 </section>

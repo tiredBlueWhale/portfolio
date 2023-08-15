@@ -42,7 +42,7 @@
 	<div
 		class="h-8 lg:h-16 py-1 lg:py-2 px-2 lg:px-4 absolute top-0 left-0 right-0 flex justify-between"
 	>
-		<a href="/">
+		<a href="{base}/">
 			<img
 				class="h-full w-auto object-contain lg:pt-1 lg:pr-1 lg:pb-1 lg:pl-2"
 				src={logo}
