@@ -5,7 +5,7 @@
 	/**
 	 * @type {number}
 	 */
-	let innerHeight;
+	let outerHeight;
 
 	/**
 	 * @type {number}
@@ -24,13 +24,13 @@
 
 	$: {
 		if (section !== undefined && sectionPlaceholder !== null) {
-			const height = innerHeight + sectionPlaceholder.offsetTop - scrollY;
+			const height = outerHeight + sectionPlaceholder.offsetTop - scrollY;
 			section.style.height = (height > 0 ? height : 0) + 'px';
 		}
 	}
 </script>
 
-<svelte:window bind:innerHeight bind:scrollY />
+<svelte:window bind:outerHeight bind:scrollY />
 
 <section
 	class="fixed top-0 right-0 left-0 overflow-clip {zIndex}"
