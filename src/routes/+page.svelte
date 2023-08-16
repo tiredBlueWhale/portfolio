@@ -11,7 +11,7 @@
 </script>
 
 <svelte:head>
-	<title>Portfolio</title>
+	<title>Tired Blue Whale</title>
 	<meta name="description" content="Tired Blue Whale" />
 </svelte:head>
 

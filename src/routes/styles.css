@@ -23,6 +23,10 @@
 	a {
 		@apply underline;
 	}
+
+	.pb-safe {
+		padding-bottom: env(safe-area-inset-bottom);
+	}
 }
 
 @tailwind components;

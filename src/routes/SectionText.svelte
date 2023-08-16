@@ -9,7 +9,7 @@
 		'The goal is to stay inside the outer circle, which changes speed, size and rythm.';
 </script>
 
-<section class="flex flex-col">
+<section class="flex flex-col pb-safe">
 	<div class="lg:flex-1" />
 	<h3 class="text-xs lg:text-base">Game</h3>
 	<h1 class="text-xl lg:text-6xl font-bold">{title}</h1>
