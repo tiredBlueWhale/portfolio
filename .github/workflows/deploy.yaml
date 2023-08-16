@@ -1,5 +1,5 @@
 ---
-name: CI
+name: page-build-and-deployment
 on:
   push:
     branches: [ master ]
@@ -30,7 +30,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: build
-          
+
   deploy:
     needs: build
     permissions:
