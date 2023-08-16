@@ -37,7 +37,7 @@
 	bind:this={section}
 	style="height: 100vh;"
 >
-	<div class="absolute top-0 right-0 left-0 h-screen">
+	<div class="absolute top-0 right-0 left-0 h-screen-large">
 		<slot />
 	</div>
 </section>
