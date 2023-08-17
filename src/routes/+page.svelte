@@ -1,11 +1,9 @@
 <script>
 	import { base } from '$app/paths';
-	import { paths } from '$lib/stores';
 
 	import Hero from './Hero.svelte';
 	import Section from './Section.svelte';
 	import SectionContent from './SectionContent.svelte';
-	import SectionText from './SectionText.svelte';
 
 	import IPhone from './IPhone.svelte';
 	import SectionDevice from './SectionDevice.svelte';
@@ -45,10 +43,10 @@
 		</div>
 		<SectionDevice slot="device">
 			<div class="translate-x-2 md:translate-x-0 -translate-y-4 md:translate-y-4 lg:translate-y-16">
-				<IPhone />
+				<!-- <IPhone /> -->
 			</div>
 			<div class="-translate-x-2 md:-translate-x-4 md:-translate-y-4 lg:-translate-y-16 z-10">
-				<Android />
+				<!-- <Android /> -->
 			</div>
 		</SectionDevice>
 	</SectionContent>
@@ -74,10 +72,10 @@
 		</div>
 		<SectionDevice slot="device" landscape>
 			<div class="translate-x-4 md:translate-x-8 translate-y-4 md:translate-y-6 z-10">
-				<Android />
+				<!-- <Android /> -->
 			</div>
 			<div class="md:translate-x-0 -translate-y-4 md:translate-y-0">
-				<IPhone />
+				<!-- <IPhone /> -->
 			</div>
 		</SectionDevice>
 	</SectionContent>
@@ -130,7 +128,7 @@
 			<a class="text-xs lg:text-base" href="{base}/privacy/">Privacy Policy</a>
 		</div>
 		<SectionDevice slot="device">
-			<Laptop />
+			<!-- <Laptop /> -->
 		</SectionDevice>
 	</SectionContent>
 </Section>

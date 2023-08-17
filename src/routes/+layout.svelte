@@ -5,7 +5,7 @@
 </script>
 
 <div class="relative flex flex-col min-h-screen">
-	<Header />
+	<!-- <Header /> -->
 	<main class="z-20">
 		<slot />
 	</main>

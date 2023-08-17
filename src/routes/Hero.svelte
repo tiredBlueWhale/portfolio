@@ -6,18 +6,18 @@
 	/**
 	 * @type {number}
 	 */
-	let innerHeight;
+	let outerHeight;
 
 	function scrollDown() {
 		window.scrollTo({
-			top: innerHeight * 1.1,
+			top: outerHeight * 1.1,
 			left: 0,
 			behavior: 'smooth'
 		});
 	}
 </script>
 
-<svelte:window bind:innerHeight />
+<svelte:window bind:outerHeight />
 
 <Section sectionId="hero" zIndex="z-[10]">
 	<section class="h-full flex justify-center items-center bg-hero">
