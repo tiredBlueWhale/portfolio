@@ -6,7 +6,7 @@
 <div class="h-full flex justify-center p-8 xl:py-32 lg:px-16 xl:px-52">
 	<div class="flex-1 flex flex-col-reverse md:flex-row max-w-screen-2xl">
 		<slot name="top" />
-		<div class="flex-1 flex flex-col">
+		<div class="flex-1 flex flex-col {fontFamily}">
 			<slot />
 		</div>
 		<div class="md:p-2" />

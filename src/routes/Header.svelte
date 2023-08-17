@@ -20,8 +20,6 @@
 	}
 </script>
 
-<!-- <svelte:window bind:innerWidth /> -->
-
 <header class="sticky top-0 left-0 right-0 z-[9999] animate-[fade-in_4s_ease-in-out]">
 	<div class="absolute top-0 right-0 left-0 flex justify-center">
 		<div

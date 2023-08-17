@@ -128,7 +128,7 @@
 			<a class="text-xs lg:text-base" href="{base}/privacy/">Privacy Policy</a>
 		</div>
 		<SectionDevice slot="device">
-			<!-- <Laptop /> -->
+			<Laptop />
 		</SectionDevice>
 	</SectionContent>
 </Section>
