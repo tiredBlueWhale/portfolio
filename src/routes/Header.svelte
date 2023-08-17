@@ -31,7 +31,7 @@
 		>
 			<div class="xl:p-10">
 				<a href="{base}/">
-					<img class="hidden xl:block h-8 xl:h-16 aspect-1" src={logo} alt="Home" /></a
+					<img class="hidden xl:block h-8 xl:h-16 w-8 xl:w-16" src={logo} alt="Home" /></a
 				>
 			</div>
 			<nav class="flex flex-col justify-center group xl:p-8">
