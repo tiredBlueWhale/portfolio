@@ -9,6 +9,9 @@ export default {
       hero: '#0148ca'
     },
     extend: {
+      fontFamily: {
+        'martian': ['Martian-Mono', 'sans-serif']
+      },
       height: {
         screen: ['100vh /* fallback for Opera, IE and etc. */', '100dvh'],
         'screen-large': ['100vh /* fallback for Opera, IE and etc. */', '100lvh'],
@@ -25,7 +28,7 @@ export default {
       },
       animation: {
         blink: 'blink 0.8s ease-in-out infinite',
-      }
+      },
     },
   },
   plugins: [],

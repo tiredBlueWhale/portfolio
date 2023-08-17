@@ -29,8 +29,10 @@
 
 <svelte:window bind:scrollY />
 
-<section class="fixed top-0 right-0 left-0 overflow-clip {zIndex} " style="height: {height};">
-	<div class="absolute top-0 right-0 left-0 h-screen transition-[height] duration-75 ease-linear">
+<section class="fixed top-0 right-0 left-0 overflow-clip {zIndex}" style="height: {height};">
+	<div
+		class="absolute top-0 right-0 left-0 h-screen transition-[height] duration-75 ease-linear {color}"
+	>
 		<slot />
 	</div>
 </section>

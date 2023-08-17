@@ -1,18 +1,20 @@
 <script>
-	export let color = 'bg-neutral-800';
-	// export let colorText = 'bg-neutral-800';
+	// export let color = 'bg-neutral-800';
+	export let fontFamily = '';
 </script>
 
-<div class="h-full flex justify-center pt-8 pb-8 lg:py-16 px-8 lg:px-32 {color}">
-	<div class="max-w-[1200px] flex-1 flex flex-col-reverse lg:flex-row lg:gap-8">
-		<div class="flex-1 lg:min-w-[400px] flex">
-			<slot name="text" />
+<div class="h-full flex justify-center p-8 xl:py-32 lg:px-16 xl:px-52">
+	<div class="flex-1 flex flex-col-reverse md:flex-row max-w-screen-2xl">
+		<slot name="top" />
+		<div class="flex-1 flex flex-col {fontFamily}">
+			<slot />
 		</div>
-		<div class="p-1 lg:p-2" />
+		<div class="md:p-2" />
 		<div
-			class="flex-1 lg:flex-1 flex justify-center lg:justify-start items-end lg:items-center relative"
+			class="flex-1 md:grow-[1.2] lg:grow-[1.0] xl:grow-[1.6] flex flex-row justify-center md:justify-start items-end md:items-center"
 		>
 			<slot name="device" />
 		</div>
+		<slot name="bottom" />
 	</div>
 </div>

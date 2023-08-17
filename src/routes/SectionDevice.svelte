@@ -3,9 +3,7 @@
 </script>
 
 <div
-	class="flex flex-row items-center origin-top-left {landscape
-		? '-rotate-90 translate-y-full'
-		: ''}"
+	class="relative flex flex-row origin-top-left {landscape ? '-rotate-90 translate-y-full' : ''}"
 >
 	<slot />
 </div>

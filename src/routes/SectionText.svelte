@@ -15,7 +15,7 @@
 	<h1 class="text-xl lg:text-6xl font-bold">{title}</h1>
 	<h2 class="text-lg lg:text-3xl pb-1 lg:pb-4">{subTitle}</h2>
 	<p class="text-base lg:text-xl pb-1 lg:pb-4">{description}</p>
-	<a class="text-base lg:text-xl pb-2 lg:pb-8" href="{base}/more">Learn More</a>
+	<a class="text-base lg:text-xl pb-2 lg:pb-8" href="{base}/more/test">Learn More</a>
 	<div class="flex flex-wrap gap-2 lg:gap-4">
 		<a href="https://www.google.com"
 			><img class="h-11 lg:h-16 object-contain" alt="Download on the App Store" src={apple} /></a

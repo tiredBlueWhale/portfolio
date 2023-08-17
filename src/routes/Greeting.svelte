@@ -98,8 +98,11 @@
 </script>
 
 <div class="flex flex-flow justify-center">
-	<h1 class="text-2xl lg:text-5xl text-right pr-2" bind:this={heading}>{greetings[index]}</h1>
-	<span class="text-2xl lg:text-5xl w-1 bg-white text-transparent animate-blink" bind:this={cursor}
-		>b</span
+	<h1 class="text-5xl md:text-6xl lg:text-7xl text-right pr-2" bind:this={heading}>
+		{greetings[index]}
+	</h1>
+	<span
+		class="text-5xl md:text-6xl lg:text-7xl w-1 bg-white text-transparent animate-blink"
+		bind:this={cursor}>b</span
 	>
 </div>

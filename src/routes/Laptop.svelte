@@ -1,47 +1,20 @@
 <script>
-	import stayInside from '$lib/images/stay-inside.png';
-
-	export let src = stayInside;
+	export let src = 'https://flowbite.s3.amazonaws.com/docs/device-mockups/laptop-screen.png';
 </script>
 
-<!-- <div
-	class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]"
->
-	<div class="rounded-lg overflow-hidden h-[156px] md:h-[278px] bg-white dark:bg-gray-800">
-		<img {src} class="dark:hidden h-[156px] md:h-[278px] w-full rounded-xl" alt="Laptop" />
-		<img {src} class="hidden dark:block h-[156px] md:h-[278px] w-full rounded-lg" alt="Laptop" />
-	</div>
-</div>
-<div
-	class="relative mx-auto bg-gray-900 dark:bg-gray-700 rounded-b-xl rounded-t-sm h-[17px] max-w-[351px] md:h-[21px] md:max-w-[597px]"
->
-	<div
-		class="absolute left-1/2 top-0 -translate-x-1/2 rounded-b-xl w-[56px] h-[5px] md:w-[96px] md:h-[8px] bg-gray-800"
-	/>
-</div> -->
-
-<div class="h-[320px] w-[200px] md:w-[597px]">
-	<div
-		class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]"
-	>
-		<div class="rounded-lg overflow-hidden h-[156px] md:h-[278px] bg-white dark:bg-gray-800">
-			<img
-				{src}
-				class="dark:hidden h-[156px] md:h-[278px] w-full rounded-xl object-cover"
-				alt="Laptop"
-			/>
-			<img
-				{src}
-				class="hidden dark:block h-[156px] md:h-[278px] w-full rounded-lg object-cover"
-				alt="Laptop"
-			/>
+<div class="flex flex-col justify-center max-w-full aspect-[2/1]">
+	<div class="h-[94%] self-center aspect-[16/9]">
+		<div
+			class="h-full w-full border-[12px] border-gray-800 dark:border-gray-800 bg-gray-800 rounded-t-xl"
+		>
+			<div class="rounded-lg overflow-hidden w-full h-full bg-white dark:bg-gray-700">
+				<img {src} class="rounded-lg w-full h-auto object-cover object-center" alt="Laptop" />
+			</div>
 		</div>
 	</div>
 	<div
-		class="relative first-letter:mx-auto bg-gray-900 dark:bg-gray-700 rounded-b-xl rounded-t-sm h-[17px] max-w-[351px] md:h-[21px] md:max-w-[597px]"
+		class="flex justify-center items-start h-[6%] border-gray-900 dark:bg-gray-700 rounded-b-xl rounded-t-sm"
 	>
-		<div
-			class="absolute left-1/2 top-0 -translate-x-1/2 rounded-b-xl w-[56px] h-[5px] md:w-[96px] md:h-[8px] bg-gray-800"
-		/>
+		<div class="w-[15%] h-1/2 rounded-b-xl bg-gray-800" />
 	</div>
 </div>
