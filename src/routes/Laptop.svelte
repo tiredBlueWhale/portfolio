@@ -3,7 +3,7 @@
 </script>
 
 <div
-	class="flex flex-col justify-center w-[150px] md:w-[300px] lg:w=[450px] xl:w-[800px] aspect-[2/1]"
+	class="flex flex-col justify-center w-[400px] md:w-[400px] lg:w=[500px] xl:w-[800px] aspect-[2/1]"
 >
 	<div class="h-[94%] self-center aspect-[16/9]">
 		<div
