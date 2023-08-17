@@ -43,10 +43,10 @@
 		</div>
 		<SectionDevice slot="device">
 			<div class="translate-x-2 md:translate-x-0 -translate-y-4 md:translate-y-4 lg:translate-y-16">
-				<!-- <IPhone /> -->
+				<IPhone />
 			</div>
 			<div class="-translate-x-2 md:-translate-x-4 md:-translate-y-4 lg:-translate-y-16 z-10">
-				<!-- <Android /> -->
+				<Android />
 			</div>
 		</SectionDevice>
 	</SectionContent>
@@ -72,10 +72,10 @@
 		</div>
 		<SectionDevice slot="device" landscape>
 			<div class="translate-x-4 md:translate-x-8 translate-y-4 md:translate-y-6 z-10">
-				<!-- <Android /> -->
+				<Android />
 			</div>
 			<div class="md:translate-x-0 -translate-y-4 md:translate-y-0">
-				<!-- <IPhone /> -->
+				<IPhone />
 			</div>
 		</SectionDevice>
 	</SectionContent>
