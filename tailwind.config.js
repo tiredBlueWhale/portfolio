@@ -6,6 +6,7 @@ export default {
       height: {
         screen: ['100vh /* fallback for Opera, IE and etc. */', '100dvh'],
         'screen-large': ['100vh /* fallback for Opera, IE and etc. */', '100lvh'],
+        'section-placeholder': ['110vh /* fallback for Opera, IE and etc. */', '110lvh'],
       },
       keyframes: {
         'fade-in': {

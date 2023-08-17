@@ -15,10 +15,10 @@
 	<meta name="description" content="Tired Blue Whale" />
 </svelte:head>
 
-<Section zIndex={'z-[10]'}>
+<Section zIndex="z-[10]">
 	<Hero />
 </Section>
-<Section zIndex={'z-[9]'}>
+<Section zIndex="z-[9]">
 	<SectionContent color="bg-orange-500">
 		<SectionText
 			slot="text"
@@ -36,8 +36,8 @@
 		</SectionDevice>
 	</SectionContent>
 </Section>
-<Section zIndex={'z-[8]'}>
-	<SectionContent color="bg-red-600" colorText="pink">
+<Section zIndex="z-[8]">
+	<SectionContent color="bg-red-600">
 		<SectionText
 			slot="text"
 			title="Color & Shape"
@@ -54,7 +54,7 @@
 		</SectionDevice>
 	</SectionContent>
 </Section>
-<Section zIndex={'z-7]'}>
+<Section zIndex="z-7]">
 	<SectionContent color="bg-green-600">
 		<SectionText slot="text" />
 		<SectionDevice slot="device">

@@ -1,7 +1,6 @@
 <script>
-	import { onMount } from 'svelte';
-
-	export let zIndex = '-z-10';
+	export let zIndex = 'z-0';
+	export let color = 'bg-neutral-800';
 	/**
 	 * @type {number}
 	 */
@@ -37,9 +36,9 @@
 	bind:this={section}
 	style="height: 100vh;"
 >
-	<div class="absolute top-0 right-0 left-0 h-screen">
+	<div class="absolute top-0 right-0 left-0 h-screen-large">
 		<slot />
 	</div>
 </section>
 
-<div class="h-[110vh]" bind:this={sectionPlaceholder} />
+<div class="h-section-placeholder {color}" bind:this={sectionPlaceholder} />

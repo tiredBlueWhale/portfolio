@@ -1,11 +1,11 @@
 <script>
-	export let color = 'black';
-	export let colorText = 'black';
+	export let color = 'bg-neutral-800';
+	// export let colorText = 'bg-neutral-800';
 </script>
 
 <div class="h-full flex justify-center pt-8 pb-8 lg:py-16 px-8 lg:px-32 {color}">
 	<div class="max-w-[1200px] flex-1 flex flex-col-reverse lg:flex-row lg:gap-8">
-		<div class="flex-1 lg:min-w-[400px] flex {colorText}">
+		<div class="flex-1 lg:min-w-[400px] flex">
 			<slot name="text" />
 		</div>
 		<div class="p-1 lg:p-2" />

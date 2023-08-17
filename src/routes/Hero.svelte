@@ -10,7 +10,7 @@
 
 	function scrollDown() {
 		window.scrollTo({
-			top: height * 1,
+			top: height * 1.1,
 			left: 0,
 			behavior: 'smooth'
 		});
