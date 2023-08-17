@@ -35,7 +35,7 @@
 	style="height: 100vh;"
 	bind:this={section}
 >
-	<div class="absolute top-0 right-0 left-0 h-screen transition-[height] duration-75 ease-linear">
+	<div class="absolute top-0 right-0 left-0 h-screen">
 		<div class={color}>
 			<slot />
 		</div>
