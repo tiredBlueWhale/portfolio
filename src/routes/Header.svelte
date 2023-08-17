@@ -16,9 +16,6 @@
 	 */
 	function getPathname(pathname) {
 		const pathSplit = pathname.split('/');
-		console.log(pathSplit);
-
-		console.log('/' + pathSplit[1]);
 		return '/' + pathSplit[1];
 	}
 </script>
