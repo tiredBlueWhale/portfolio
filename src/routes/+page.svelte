@@ -15,10 +15,8 @@
 	<meta name="description" content="Tired Blue Whale" />
 </svelte:head>
 
-<Section zIndex="z-[10]">
-	<Hero />
-</Section>
-<Section zIndex="z-[9]">
+<Hero />
+<Section zIndex="z-[9]" color="bg-orange-500">
 	<SectionContent color="bg-orange-500">
 		<SectionText
 			slot="text"
