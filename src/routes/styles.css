@@ -4,7 +4,7 @@
 @layer base {
 
 	html {
-		@apply bg-neutral-800
+		@apply bg-hero
 	}
 
 	h1,
@@ -22,10 +22,6 @@
 
 	a {
 		@apply underline;
-	}
-
-	.pb-safe {
-		padding-bottom: env(safe-area-inset-bottom);
 	}
 }
 

@@ -2,15 +2,12 @@
 	import './styles.css';
 	import Header from './Header.svelte';
 	import Footer from './Footer.svelte';
-	import Section from './Section.svelte';
 </script>
 
 <div class="relative flex flex-col min-h-screen">
 	<Header />
-	<main class="z-10">
+	<main class="z-20">
 		<slot />
 	</main>
-	<Section>
-		<Footer />
-	</Section>
+	<Footer />
 </div>

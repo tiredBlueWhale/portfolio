@@ -1,7 +1,13 @@
+const colors = require('tailwindcss/colors')
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
+    colors: {
+      ...colors,
+      hero: '#0148ca'
+    },
     extend: {
       height: {
         screen: ['100vh /* fallback for Opera, IE and etc. */', '100dvh'],

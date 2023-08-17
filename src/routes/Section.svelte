@@ -1,10 +1,11 @@
 <script>
+	export let sectionId = '';
 	export let zIndex = 'z-0';
-	export let color = 'bg-neutral-800';
+	export let color = 'bg-hero';
 	/**
 	 * @type {number}
 	 */
-	let outerHeight;
+	// let innerHeight;
 
 	/**
 	 * @type {number}
@@ -14,31 +15,29 @@
 	/**
 	 * @type {HTMLElement}
 	 */
-	let section;
-
-	/**
-	 * @type {HTMLElement}
-	 */
 	let sectionPlaceholder;
 
+	let height = '100%';
+
 	$: {
-		if (section !== undefined && sectionPlaceholder !== null) {
-			const height = outerHeight + sectionPlaceholder.offsetTop - scrollY;
-			section.style.height = (height > 0 ? height : 0) + 'px';
+		if (sectionPlaceholder !== undefined) {
+			const _height = sectionPlaceholder.clientHeight + sectionPlaceholder.offsetTop - scrollY;
+			height = (_height > 0 ? _height : 0) + 'px';
 		}
 	}
 </script>
 
-<svelte:window bind:outerHeight bind:scrollY />
+<svelte:window bind:scrollY />
 
-<section
-	class="fixed top-0 right-0 left-0 overflow-clip {zIndex}"
-	bind:this={section}
-	style="height: 100vh;"
->
-	<div class="absolute top-0 right-0 left-0 h-screen transition-all">
-		<slot />
+<section class="fixed top-0 right-0 left-0 bottom-0 {zIndex}">
+	<div
+		class="absolute top-0 right-0 left-0 overflow-clip {zIndex} {color}"
+		style="height: {height};"
+	>
+		<div class="absolute top-0 right-0 left-0 h-screen transition-[height] duration-75 ease-linear">
+			<slot />
+		</div>
 	</div>
 </section>
 
-<div class="h-section-placeholder {color}" bind:this={sectionPlaceholder} />
+<div id={sectionId} class="h-section-placeholder" bind:this={sectionPlaceholder} />

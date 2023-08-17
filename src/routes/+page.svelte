@@ -16,7 +16,7 @@
 </svelte:head>
 
 <Hero />
-<Section zIndex="z-[9]" color="bg-orange-500">
+<Section sectionId="stay-inside" zIndex="z-[9]" color="bg-orange-500">
 	<SectionContent color="bg-orange-500">
 		<SectionText
 			slot="text"
@@ -34,13 +34,13 @@
 		</SectionDevice>
 	</SectionContent>
 </Section>
-<Section zIndex="z-[8]">
+<Section sectionId="color-and-shape" zIndex="z-[8]" color="bg-red-600">
 	<SectionContent color="bg-red-600">
 		<SectionText
 			slot="text"
 			title="Color & Shape"
 			subTitle="Fast passed hyper casual mobile game"
-			description="The goal is to press the correct color(s) and shape(s) made difficult by the Stroop effect"
+			description="The goal is to press the correct color(s) and shape(s) made difficult by the Stroop effect. This is some extra text lets see how it currently looks"
 		/>
 		<SectionDevice slot="device" landscape>
 			<div class="translate-x-4 lg:translate-x-4 translate-y-4 lg:translate-y-16 z-10">
@@ -52,7 +52,7 @@
 		</SectionDevice>
 	</SectionContent>
 </Section>
-<Section zIndex="z-7]">
+<Section sectionId="maze" zIndex="z-[7]" color="bg-green-600">
 	<SectionContent color="bg-green-600">
 		<SectionText slot="text" />
 		<SectionDevice slot="device">
