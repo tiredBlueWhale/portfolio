@@ -5,7 +5,7 @@
 </script>
 
 <div
-	class="aspect-[1/2] max-w-[150px] md:max-w-[300px] xl:max-w-[350px] relative border-[7px] md:border-[9px] lg:border-[14px] rounded-[1.25rem] lg:rounded-[2.5rem] drop-shadow-2xl border-gray-800 bg-gray-800"
+	class="aspect-[1/2] w-[150px] md:w-[200px] lg:w-[250px] xl:w-[300px] 2xl:w-[350px] relative border-[7px] md:border-[9px] lg:border-[14px] rounded-[1.25rem] lg:rounded-[2.5rem] drop-shadow-2xl border-gray-800 bg-gray-800"
 >
 	<div
 		class="absolute h-[4%] w-[24%] top-[1.5%] rounded-[2rem] left-1/2 -translate-x-1/2 bg-gray-800"

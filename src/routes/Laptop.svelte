@@ -2,7 +2,9 @@
 	export let src = 'https://flowbite.s3.amazonaws.com/docs/device-mockups/laptop-screen.png';
 </script>
 
-<div class="flex flex-col justify-center max-w-full aspect-[2/1]">
+<div
+	class="flex flex-col justify-center w-[150px] md:w-[300px] lg:w=[450px] xl:w-[800px] aspect-[2/1]"
+>
 	<div class="h-[94%] self-center aspect-[16/9]">
 		<div
 			class="h-full w-full border-[12px] border-gray-800 dark:border-gray-800 bg-gray-800 rounded-t-xl"
