@@ -40,7 +40,7 @@
 				<IPhone />
 			</div>
 			<div
-				class="-translate-x-2 md:-translate-x-4 lg:-translate-x-8 translate-y-8 md:-translate-y-4 lg:-translate-y-8 z-10"
+				class="-translate-x-2 md:-translate-x-4 lg:-translate-x-8 translate-y-2 md:-translate-y-4 lg:-translate-y-8 z-10"
 			>
 				<Android />
 			</div>
