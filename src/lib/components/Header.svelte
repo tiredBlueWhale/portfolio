@@ -17,8 +17,11 @@
 	 */
 	function getPathname(pathname) {
 		const pathSplit = pathname.split('/');
-		if (pathname.includes('portfolio') && pathSplit.length > 2) {
-			return '/' + pathSplit[2];
+		if (pathname.includes('portfolio')) {
+			if (pathSplit.length > 2) {
+				return '/' + pathSplit[2];
+			}
+			return '/';
 		}
 		return '/' + pathSplit[1];
 	}
