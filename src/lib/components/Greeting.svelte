@@ -9,10 +9,8 @@
 	 * @type {HTMLSpanElement}
 	 */
 	let cursor;
+	let blinkAnimation = 'animate-blink';
 
-	let index = 0;
-	let deltaTime = 0;
-	let previousTimeStamp = 0;
 	const greetings = [
 		'Hello',
 		'Moi',
@@ -29,6 +27,9 @@
 	onMount(() => {
 		// return;
 		let frame = requestAnimationFrame(type);
+		let index = 0;
+		let deltaTime = 0;
+		let previousTimeStamp = 0;
 
 		/**
 		 * @param {number} timeStamp
@@ -50,10 +51,10 @@
 
 			deltaTime = 0;
 			if (heading.textContent.length < greetings[index].length) {
-				cursor.classList.remove('animate-blink');
+				blinkAnimation = '';
 				heading.textContent += greetings[index][heading.textContent.length];
 			} else {
-				cursor.classList.add('animate-blink');
+				blinkAnimation = 'animate-blink';
 				cancelAnimationFrame(frame);
 				frame = requestAnimationFrame(erase);
 			}
@@ -77,14 +78,14 @@
 
 			deltaTime = 0;
 			if (heading.textContent.length > 0) {
-				cursor.classList.remove('animate-blink');
+				blinkAnimation = '';
 				heading.textContent = heading.textContent.slice(0, -1);
 			} else {
 				index += 1;
 				if (index >= greetings.length) {
 					index = 0;
 				}
-				cursor.classList.add('animate-blink');
+				blinkAnimation = 'animate-blink';
 				cancelAnimationFrame(frame);
 				frame = requestAnimationFrame(type);
 			}
@@ -96,12 +97,12 @@
 	});
 </script>
 
-<div class="flex flex-flow justify-center animate-intro">
+<div class="flex flex-flow justify-center">
 	<h1 class="text-5xl md:text-6xl lg:text-7xl text-right pr-2" bind:this={heading}>
 		<!-- {greetings[index]} -->
 	</h1>
 	<span
-		class="text-5xl md:text-6xl lg:text-7xl w-1 bg-white text-transparent animate-blink"
+		class="text-5xl md:text-6xl lg:text-7xl w-1 bg-white text-transparent {blinkAnimation}"
 		bind:this={cursor}>b</span
 	>
 </div>

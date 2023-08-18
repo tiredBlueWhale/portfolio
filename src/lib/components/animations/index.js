@@ -1,0 +1,1 @@
+export { default as AnimationOnFirstLoad } from "./AnimationOnFirstLoad.svelte";
