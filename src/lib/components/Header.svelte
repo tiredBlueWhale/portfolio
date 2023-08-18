@@ -20,7 +20,7 @@
 	}
 </script>
 
-<header class="sticky top-0 left-0 right-0 z-[9999] animate-intro">
+<header class="sticky top-0 left-0 right-0 z-[9999]">
 	<div class="absolute top-0 right-0 left-0 flex justify-center">
 		<div
 			class="flex-1 h-screen xl:h-0 max-w-header {isOpen
