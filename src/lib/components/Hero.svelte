@@ -1,6 +1,6 @@
 <script>
 	import logo from '$lib/images/tired-blue-whale.png';
-	import Section from './Section.svelte';
+	import { Section } from './sections';
 	import Greeting from './Greeting.svelte';
 
 	/**

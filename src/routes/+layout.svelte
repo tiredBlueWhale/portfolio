@@ -1,7 +1,6 @@
 <script>
 	import './styles.css';
-	import Header from './Header.svelte';
-	import Footer from './Footer.svelte';
+	import { Header, Footer } from '$lib/components';
 </script>
 
 <div class="relative flex flex-col min-h-screen">

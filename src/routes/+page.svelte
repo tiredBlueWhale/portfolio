@@ -1,15 +1,9 @@
 <script>
 	import { base } from '$app/paths';
 
-	import Hero from './Hero.svelte';
-	import Section from './Section.svelte';
-	import SectionContent from './SectionContent.svelte';
-
-	import IPhone from './IPhone.svelte';
-	import SectionDevice from './SectionDevice.svelte';
-	import Android from './Android.svelte';
-	import Laptop from './Laptop.svelte';
-	import Download from './SectionFooter.svelte';
+	import { Hero, Download } from '$lib/components';
+	import { Section, SectionContent, SectionDevice } from '$lib/components/sections';
+	import { Android, IPhone, Laptop } from '$lib/components/devices';
 </script>
 
 <svelte:head>

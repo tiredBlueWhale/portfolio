@@ -1,5 +1,4 @@
 <script>
-	import logo from '$lib/images/tired-blue-whale.png';
 	import { onMount } from 'svelte';
 
 	/**

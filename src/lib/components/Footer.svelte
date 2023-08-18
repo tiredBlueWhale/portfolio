@@ -2,7 +2,7 @@
 	import github from '$lib/images/github-mark-white.svg';
 	import envelope from '$lib/images/envelope-regular.svg';
 
-	import Section from './Section.svelte';
+	import { Section } from '$lib/components/sections';
 
 	const year = new Date().getFullYear();
 </script>
