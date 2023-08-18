@@ -16,7 +16,10 @@
 	 */
 	function getPathname(pathname) {
 		const pathSplit = pathname.split('/');
-		return '/' + pathSplit[process.env.NODE_ENV === 'production' ? 2 : 1];
+		if (pathSplit.length > 2) {
+			return '/' + pathSplit[2];
+		}
+		return '/';
 	}
 </script>
 
