@@ -4,8 +4,11 @@
 	export let src = stayInside;
 </script>
 
-<div
+<!-- <div
 	class="aspect-[1/2] w-[150px] md:w-[200px] lg:w-[250px] xl:w-[300px] 2xl:w-[350px] relative border-[7px] md:border-[9px] lg:border-[14px] rounded-[.37rem] lg:rounded-[.75rem] border-gray-800 bg-gray-800"
+> -->
+<div
+	class="relative border-[7px] md:border-[9px] lg:border-[14px] rounded-[.37rem] lg:rounded-[.75rem] border-gray-800 bg-gray-800"
 >
 	<div
 		class="absolute h-[3%] w-[52%] bg-gray-800 top-0 rounded-b-[.5rem] lg:rounded-b-[1rem] left-1/2 -translate-x-1/2"
@@ -19,7 +22,11 @@
 	<div
 		class="rounded-[.37rem] lg:rounded-[.75rem] overflow-hidden w-full h-full bg-white dark:bg-gray-800"
 	>
-		<img {src} class="w-auto h-full object-cover" alt="Android" />
+		<img
+			{src}
+			class="aspect-[1/2] w-[150px] md:w-[200px] lg:w-[250px] xl:w-[300px] 2xl:w-[350px] object-cover"
+			alt="Android"
+		/>
 		<!-- <img {src} class="hidden dark:block w-auto h-full object-cover" alt="Android" /> -->
 	</div>
 </div>

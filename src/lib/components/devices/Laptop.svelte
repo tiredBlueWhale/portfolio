@@ -2,15 +2,17 @@
 	export let src = 'https://flowbite.s3.amazonaws.com/docs/device-mockups/laptop-screen.png';
 </script>
 
-<div
-	class="flex flex-col justify-center w-[300px] md:w-[400px] lg:w-[500px] xl:w-[600px] 2xl:w-[700px] aspect-[2/1]"
->
+<div class="flex flex-col justify-center">
 	<div class="h-[94%] self-center aspect-[16/9]">
 		<div
 			class="h-full w-full border-[12px] border-gray-800 dark:border-gray-800 bg-gray-800 rounded-t-xl"
 		>
 			<div class="rounded-lg overflow-hidden w-full h-full bg-white dark:bg-gray-700">
-				<img {src} class="rounded-lg w-full h-auto object-cover object-center" alt="Laptop" />
+				<img
+					{src}
+					class="rounded-lg w-[300px] md:w-[400px] lg:w-[500px] xl:w-[600px] 2xl:w-[700px] aspect-[16/9] object-contain"
+					alt="Laptop"
+				/>
 			</div>
 		</div>
 	</div>

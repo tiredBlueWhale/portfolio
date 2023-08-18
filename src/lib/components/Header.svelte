@@ -47,7 +47,12 @@
 			</nav>
 		</div>
 	</div>
-	<button class="absolute top-4 right-4 xl:hidden" on:click={onButtonClick}>
+	<button
+		type="button"
+		class="absolute top-4 right-4 xl:hidden"
+		aria-label="Open Navigation"
+		on:click={onButtonClick}
+	>
 		{#if isOpen}
 			<svg
 				class="w-6 h-6 text-gray-800 dark:text-white"

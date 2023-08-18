@@ -38,6 +38,7 @@
 			<button
 				type="button"
 				class="absolute right-4 lg:right-10 bottom-4 lg:bottom-8 rounded-full border-2 p-2 animate-bounce"
+				aria-label="Scroll down"
 				on:click={scrollDown}
 			>
 				<svg
