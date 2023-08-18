@@ -1,4 +1,11 @@
 @import '@fontsource/martian-mono';
+@import '@fontsource/fira-mono';
+
+@font-face {
+	font-family: OpenDyslexic;
+	src: url('../lib/fonts/OpenDyslexicMono-Regular.otf') format("opentype");
+}
+
 @tailwind base;
 
 @layer base {

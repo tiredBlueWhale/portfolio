@@ -20,19 +20,19 @@
 	}
 </script>
 
-<header class="sticky top-0 left-0 right-0 z-[9999] animate-[fade-in_4s_ease-in-out]">
+<header class="sticky top-0 left-0 right-0 z-[9999] animate-intro">
 	<div class="absolute top-0 right-0 left-0 flex justify-center">
 		<div
-			class="flex-1 h-screen xl:h-0 2xl:max-w-[1800px] {isOpen
-				? 'flex'
-				: 'hidden'} xl:flex flex-row justify-center xl:justify-between items-stretch xl:items-start bg-neutral-600 xl:bg-transparent"
+			class="flex-1 h-screen xl:h-0 max-w-header {isOpen
+				? 'flex transition-[backdrop-filter] duration-150 ease-in'
+				: 'hidden'} xl:flex flex-row justify-center xl:justify-between items-stretch xl:items-start backdrop-blur"
 		>
 			<div class="xl:p-10">
 				<a href="{base}/">
 					<img class="hidden xl:block h-8 xl:h-16 w-8 xl:w-16" src={logo} alt="Home" /></a
 				>
 			</div>
-			<nav class="flex flex-col justify-center group xl:p-8">
+			<nav class="flex flex-col flex-wrap justify-center group xl:p-8">
 				{#each Object.entries($paths) as [path, { title }]}
 					<a
 						class="text-3xl md:text-6xl xl:text-2xl no-underline p-2 md:p-4 text-center xl:text-right text-neutral-200 hover:text-neutral-50

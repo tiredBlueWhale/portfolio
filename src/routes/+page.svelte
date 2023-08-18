@@ -13,10 +13,10 @@
 
 <Hero />
 <Section sectionId="stay-inside" zIndex="z-[9]" color="bg-orange-500">
-	<SectionContent fontFamily="font-martian">
+	<SectionContent>
 		<div class="md:flex-1" />
 		<span class="text-xs md:text-base lg:text-base">Game</span>
-		<h1 class="text-xl md:text-4xl lg:text-6xl font-bold">Stay Inside</h1>
+		<h1 class="text-4xl md:text-6xl lg:text-8xl font-martian font-bold">Stay Inside</h1>
 		<h2 class="text-lg md:text-xl lg:text-3xl pb-1 lg:pb-4">
 			Fast passed hyper casual mobile game
 		</h2>
@@ -29,11 +29,11 @@
 		<div class="flex-1 md:grow-[1.6]" />
 		<div class="flex gap-4">
 			<a class="text-xs md:text-base lg:text-base" href="https://github.com/tiredBlueWhale"
-				>GitHub</a
-			>
+				>GitHub
+			</a>
 			<a class="text-xs md:text-base lg:text-base" href="{base}/stay-inside/privacy"
-				>Privacy Policy</a
-			>
+				>Privacy Policy
+			</a>
 		</div>
 		<SectionDevice slot="device">
 			<div class="translate-x-2 md:translate-x-0 -translate-y-2 md:translate-y-4 lg:translate-y-8">
@@ -48,23 +48,35 @@
 	</SectionContent>
 </Section>
 <Section sectionId="color-and-shape" zIndex="z-[8]" color="bg-red-600">
-	<SectionContent>
+	<SectionContent fontFamily="">
 		<div class="md:flex-1" />
-		<span class="text-xs lg:text-base">Game</span>
-		<h1 class="text-xl lg:text-6xl font-bold">Color & Shape</h1>
-		<h2 class="text-lg lg:text-3xl pb-1 lg:pb-4">Fast passed hyper casual mobile game</h2>
-		<p class="text-base lg:text-xl pb-1 lg:pb-4">
+		<span class="text-xs md:text-base lg:text-base">Game</span>
+		<h1 class="text-xl md:text-4xl lg:text-6xl md:pb-1 font-open-dyslexic font-bold">
+			Color & Shape
+		</h1>
+		<h2 class="text-lg md:text-xl lg:text-3xl pb-1 lg:pb-4">
+			Fast passed hyper casual mobile game
+		</h2>
+		<p class="text-base md:text-lg lg:text-xl pb-1 lg:pb-4">
 			The goal is to press the correct color(s) and shape(s) made difficult by the <a
-				href="https://en.wikipedia.org/wiki/Stroop_effect">Stroop effect</a
-			> .
+				href="https://en.wikipedia.org/wiki/Stroop_effect"
+			>
+				Stroop effect
+			</a> .
 		</p>
-		<a class="text-base lg:text-xl pb-2 lg:pb-8" href="{base}/color-and-shape">Learn More</a>
+		<a class="text-base md:text-lg lg:text-xl pb-2 lg:pb-8" href="{base}/color-and-shape"
+			>Learn More
+		</a>
 		<div class="grow-[.1]" />
 		<Download apple="http" android="asdjfkajfs" />
 		<div class="flex-1 md:grow-[1.6]" />
 		<div class="flex gap-4">
-			<a class="text-xs lg:text-base" href="https://github.com/tiredBlueWhale">GitHub</a>
-			<a class="text-xs lg:text-base" href="{base}/color-and-shape/privacy">Privacy Policy</a>
+			<a class="text-xs md:text-base lg:text-base" href="https://github.com/tiredBlueWhale"
+				>GitHub</a
+			>
+			<a class="text-xs md:text-base lg:text-base" href="{base}/color-and-shape/privacy"
+				>Privacy Policy</a
+			>
 		</div>
 		<SectionDevice slot="device" landscape>
 			<div class="translate-x-2 md:translate-x-8 translate-y-4 md:translate-y-6 z-10">

@@ -15,12 +15,12 @@
 	let previousTimeStamp = 0;
 	const greetings = [
 		'Hello',
+		'Moi',
 		'Hola',
 		'Bonjour',
 		'Ciao',
 		'こんにちは',
 		'안녕하세요',
-		'Moi',
 		'Hallo',
 		'你好',
 		'नमस्ते'
@@ -44,7 +44,7 @@
 				return;
 			} else if (deltaTime < 300) {
 				return;
-			} else if (timeStamp < 2000) {
+			} else if (timeStamp < 6000) {
 				return;
 			}
 
@@ -96,9 +96,9 @@
 	});
 </script>
 
-<div class="flex flex-flow justify-center">
+<div class="flex flex-flow justify-center animate-intro">
 	<h1 class="text-5xl md:text-6xl lg:text-7xl text-right pr-2" bind:this={heading}>
-		{greetings[index]}
+		<!-- {greetings[index]} -->
 	</h1>
 	<span
 		class="text-5xl md:text-6xl lg:text-7xl w-1 bg-white text-transparent animate-blink"
