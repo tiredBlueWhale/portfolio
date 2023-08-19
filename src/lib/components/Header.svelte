@@ -10,7 +10,8 @@
 		introAnimation = '';
 	}
 
-	let isOpen = false;
+	console.log('Header');
+	$: isOpen = false;
 	if (!hydrated) {
 		isOpen = false;
 	}
@@ -19,6 +20,7 @@
 		isOpen = false;
 	}
 	function onButtonClick() {
+		console.log('on button click');
 		isOpen = !isOpen;
 	}
 	/**
@@ -65,7 +67,7 @@
 	</div>
 	<button
 		type="button"
-		class="absolute top-4 right-4 xl:hidden"
+		class="absolute top-8 right-4 xl:hidden"
 		aria-label="Open Navigation"
 		on:click={onButtonClick}
 	>
