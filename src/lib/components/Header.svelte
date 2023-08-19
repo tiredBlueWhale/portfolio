@@ -5,7 +5,6 @@
 	import { paths } from '$lib/stores';
 	import { hydrated } from '$lib/hydrated';
 	import { onMount } from 'svelte';
-	import { onMenuButtonMobileClick } from '$lib/onClicks';
 
 	let introAnimation = 'animate-intro';
 	if (hydrated || getPathname($page.url.pathname) !== '/') {
@@ -75,7 +74,7 @@
 		type="button"
 		class="absolute top-8 right-4 xl:hidden"
 		aria-label="Open Navigation"
-		on:click={onMenuButtonMobileClick}
+		on:click={onButtonClick}
 	>
 		{#if isOpen}
 			<svg
