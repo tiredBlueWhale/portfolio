@@ -64,7 +64,8 @@
 		</div>
 	</div>
 	<button
-		class="absolute top-4 right-4 pointer-events-auto xl:hidden"
+		type="button"
+		class="absolute top-4 right-4 xl:hidden"
 		aria-label="Open Navigation"
 		on:click={onButtonClick}
 	>
