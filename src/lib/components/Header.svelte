@@ -20,7 +20,6 @@
 	}
 	function onButtonClick() {
 		isOpen = !isOpen;
-		alert('test');
 	}
 	/**
 	 * @param {string} pathname
@@ -38,7 +37,7 @@
 </script>
 
 <header class="sticky top-0 left-0 right-0 z-[9998]">
-	<!-- <div class="absolute top-0 right-0 left-0 flex justify-center">
+	<div class="absolute top-0 right-0 left-0 flex justify-center">
 		<div
 			class="flex-1 h-screen xl:h-0 max-w-header {isOpen
 				? 'flex'
@@ -63,7 +62,7 @@
 				{/each}
 			</nav>
 		</div>
-	</div> -->
+	</div>
 	<button
 		class="absolute top-4 right-4 pointer-events-auto xl:hidden"
 		aria-label="Open Navigation"
