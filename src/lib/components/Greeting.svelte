@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import { hydrated } from '$lib/hydrated';
 
 	/**
 	 * @type {HTMLSpanElement}
@@ -10,6 +11,7 @@
 	 */
 	let cursor;
 	let blinkAnimation = 'animate-blink';
+	let introAnimation = 'animate-intro';
 
 	const greetings = [
 		'Hello',
@@ -24,8 +26,11 @@
 		'नमस्ते'
 	];
 
+	if (hydrated) {
+		introAnimation = '';
+	}
+
 	onMount(() => {
-		// return;
 		let frame = requestAnimationFrame(type);
 		let index = 0;
 		let deltaTime = 0;
@@ -97,7 +102,7 @@
 	});
 </script>
 
-<div class="flex flex-flow justify-center">
+<div class="flex flex-flow justify-center {introAnimation}">
 	<h1 class="text-5xl md:text-6xl lg:text-7xl text-right pr-2" bind:this={heading}>
 		<!-- {greetings[index]} -->
 	</h1>

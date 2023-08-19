@@ -3,7 +3,12 @@
 	import { base } from '$app/paths';
 	import { page } from '$app/stores';
 	import { paths } from '$lib/stores';
-	import { AnimationOnFirstLoad } from './animations';
+	import { hydrated } from '$lib/hydrated';
+
+	let introAnimation = 'animate-intro';
+	if (hydrated || getPathname($page.url.pathname) !== '/') {
+		introAnimation = '';
+	}
 
 	let isOpen = false;
 	function onLinkClick() {
@@ -34,13 +39,11 @@
 				? 'flex'
 				: 'hidden'} xl:flex flex-row justify-center xl:justify-between items-stretch xl:items-start backdrop-blur"
 		>
-			<AnimationOnFirstLoad animation="animate-intro">
-				<div class="xl:p-10">
-					<a href="{base}/">
-						<img class="hidden xl:block h-8 xl:h-16 w-8 xl:w-16" src={logo} alt="Home" /></a
-					>
-				</div>
-			</AnimationOnFirstLoad>
+			<div class="xl:p-10 {introAnimation}">
+				<a href="{base}/">
+					<img class="hidden xl:block h-8 xl:h-16 w-8 xl:w-16" src={logo} alt="Home" /></a
+				>
+			</div>
 			<nav class="flex flex-col flex-wrap justify-center group xl:p-8">
 				{#each Object.entries($paths) as [path, { title }]}
 					<a
