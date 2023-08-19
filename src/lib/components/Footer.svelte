@@ -5,6 +5,12 @@
 	import { Section } from '$lib/components/sections';
 
 	const year = new Date().getFullYear();
+
+	let isOpen = false;
+	function onClick() {
+		isOpen = !isOpen;
+		alert('onClick Fotter');
+	}
 </script>
 
 <Section sectionId="footer" color="bg-neutral-800">
@@ -44,5 +50,40 @@
 			</a>
 		</div>
 		<span class="text-white">Copyright @ {year} Tired Blue Whale. All rights reserved</span>
+		<button type="button" class="" aria-label="Open Navigation" on:click={onClick}>
+			{#if isOpen}
+				<svg
+					class="w-6 h-6 text-white"
+					aria-hidden="true"
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 14 14"
+				>
+					<path
+						stroke="currentColor"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+					/>
+				</svg>
+			{:else}
+				<svg
+					class="w-6 h-6 text-white"
+					aria-hidden="true"
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 17 14"
+				>
+					<path
+						stroke="currentColor"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M1 1h15M1 7h15M1 13h15"
+					/>
+				</svg>
+			{/if}
+		</button>
 	</footer>
 </Section>
