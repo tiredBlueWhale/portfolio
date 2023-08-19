@@ -72,7 +72,7 @@
 					on:click={scrollDown}
 				>
 					<svg
-						class="w-4 h-4 xl:w-8 xl:h-8 text-gray-800 dark:text-white"
+						class="w-4 h-4 xl:w-8 xl:h-8 text-white"
 						aria-hidden="true"
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"

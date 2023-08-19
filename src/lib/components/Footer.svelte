@@ -12,7 +12,7 @@
 		<div class="flex gap-4">
 			<a href="https://github.com/tiredBlueWhale">
 				<svg
-					class="w-16 h-16 text-gray-800 dark:text-white"
+					class="w-16 h-16 text-white"
 					aria-hidden="true"
 					xmlns="http://www.w3.org/2000/svg"
 					fill="currentColor"
@@ -27,7 +27,7 @@
 			</a>
 			<a href="mailto: tired.blue.whale@gmail.com">
 				<svg
-					class="w-16 h-16 text-gray-800 dark:text-white"
+					class="w-16 h-16 text-white"
 					aria-hidden="true"
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
