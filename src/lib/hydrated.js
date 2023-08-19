@@ -2,6 +2,5 @@
 export let hydrated = false
 
 export function update() {
-    console.log("hydrated")
     hydrated = true;
 }

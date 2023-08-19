@@ -4,14 +4,12 @@
 	import { page } from '$app/stores';
 	import { paths } from '$lib/stores';
 	import { hydrated } from '$lib/hydrated';
-	import { onMount } from 'svelte';
 
 	let introAnimation = 'animate-intro';
 	if (hydrated || getPathname($page.url.pathname) !== '/') {
 		introAnimation = '';
 	}
 
-	console.log('Header');
 	$: isOpen = false;
 	if (!hydrated) {
 		isOpen = false;
@@ -21,7 +19,6 @@
 		isOpen = false;
 	}
 	function onButtonClick() {
-		console.log('on button click');
 		isOpen = !isOpen;
 	}
 	/**
@@ -37,10 +34,6 @@
 		}
 		return '/' + pathSplit[1];
 	}
-
-	onMount(() => {
-		console.log('Header onMount');
-	});
 </script>
 
 <header class="sticky top-0 left-0 right-0 z-[9998]">
