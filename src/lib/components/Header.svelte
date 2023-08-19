@@ -20,6 +20,7 @@
 	}
 	function onButtonClick() {
 		isOpen = !isOpen;
+		alert('test');
 	}
 	/**
 	 * @param {string} pathname
@@ -67,7 +68,7 @@
 		type="button"
 		class="absolute top-4 right-4 z-[9999] xl:hidden"
 		aria-label="Open Navigation"
-		on:click={() => (isOpen = !isOpen)}
+		on:click={onButtonClick}
 	>
 		{#if isOpen}
 			<svg
