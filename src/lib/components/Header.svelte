@@ -66,7 +66,7 @@
 	</div> -->
 	<button
 		type="button"
-		class="absolute top-4 right-4 z-[9999] xl:hidden"
+		class="absolute top-4 right-4 pointer-events-auto xl:hidden"
 		aria-label="Open Navigation"
 		on:click={onButtonClick}
 	>
