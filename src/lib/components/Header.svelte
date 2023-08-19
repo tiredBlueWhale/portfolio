@@ -11,6 +11,10 @@
 	}
 
 	let isOpen = false;
+	if (!hydrated) {
+		isOpen = false;
+	}
+
 	function onLinkClick() {
 		isOpen = false;
 	}
@@ -32,7 +36,7 @@
 	}
 </script>
 
-<header class="sticky top-0 left-0 right-0 z-[9999]">
+<header class="sticky top-0 left-0 right-0 z-[9998]">
 	<div class="absolute top-0 right-0 left-0 flex justify-center">
 		<div
 			class="flex-1 h-screen xl:h-0 max-w-header {isOpen
@@ -61,7 +65,7 @@
 	</div>
 	<button
 		type="button"
-		class="absolute top-4 right-4 xl:hidden"
+		class="absolute top-4 right-4 z-[9999] xl:hidden"
 		aria-label="Open Navigation"
 		on:click={onButtonClick}
 	>
