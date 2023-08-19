@@ -69,6 +69,7 @@
 		class="absolute top-4 right-4 z-[9999] xl:hidden"
 		aria-label="Open Navigation"
 		on:click={onButtonClick}
+		on:touchstart={onButtonClick}
 	>
 		{#if isOpen}
 			<svg
