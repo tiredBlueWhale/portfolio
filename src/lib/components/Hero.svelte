@@ -15,7 +15,6 @@
 		barAnimation = '';
 		subTitleAnimation = '';
 		logoAniamtion = '';
-		scrollButtonAnimation = '';
 	}
 
 	/**
