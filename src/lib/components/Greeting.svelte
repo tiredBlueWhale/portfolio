@@ -50,7 +50,7 @@
 				return;
 			} else if (deltaTime < 300) {
 				return;
-			} else if (timeStamp < 6000) {
+			} else if (timeStamp < 4000) {
 				return;
 			}
 

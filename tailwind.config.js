@@ -52,7 +52,7 @@ export default {
       },
       animation: {
         blink: 'blink 0.8s ease-in-out infinite',
-        intro: 'fade-in 2s ease-in-out 4s backwards',
+        intro: 'fade-in 2s ease-in-out 3s backwards',
         'hero-bar': 'hero-bar 1.5s ease-in-out backwards',
         'hero-title': 'hero-title 1.5s ease-in-out 1s backwards',
         'hero-sub-title': 'hero-sub-title 1.5s ease-in-out 1s backwards',
