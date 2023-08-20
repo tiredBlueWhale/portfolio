@@ -6,7 +6,7 @@
 	import { hydrated } from '$lib/hydrated';
 
 	let introAnimation = 'animate-intro';
-	if (hydrated || $page.url.pathname !== `${base}/`) {
+	if (hydrated || $page.url.pathname === `${base}/`) {
 		introAnimation = '';
 	}
 
