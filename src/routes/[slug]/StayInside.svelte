@@ -1,7 +1,7 @@
 <script>
 	import { SectionScroll } from '$lib/components/sections';
 
-	import Footer from './Footer.svelte';
+	import Footer from '../../lib/components/TextFooter.svelte';
 </script>
 
 <SectionScroll title="Stay Inside" color="bg-green-700">

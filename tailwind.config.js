@@ -45,10 +45,6 @@ export default {
           '0%': { transform: 'translateY(-100%)' },
           '100%': {},
         },
-        'hero-logo': {
-          '0%': { transform: 'translateX(-100%)' },
-          '100%': {},
-        }
       },
       animation: {
         blink: 'blink 0.8s ease-in-out infinite',
@@ -56,7 +52,7 @@ export default {
         'hero-bar': 'hero-bar 1.5s ease-in-out backwards',
         'hero-title': 'hero-title 1.5s ease-in-out 1s backwards',
         'hero-sub-title': 'hero-sub-title 1.5s ease-in-out 1s backwards',
-        'hero-logo': 'hero-logo 1.5s ease-in-out 2.5s backwards',
+        'hero-logo': 'fade-in 1.5s ease-in-out 2.5s backwards',
       },
     },
   },

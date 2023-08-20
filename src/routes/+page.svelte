@@ -4,6 +4,7 @@
 	import { Hero, Download } from '$lib/components';
 	import { Section, SectionContent, SectionDevice } from '$lib/components/sections';
 	import { Android, IPhone, Laptop } from '$lib/components/devices';
+	import { TextFooter } from '$lib/components';
 </script>
 
 <svelte:head>
@@ -27,14 +28,7 @@
 		<div class="grow-[.1]" />
 		<Download apple="http" android="asdjfkajfs" />
 		<div class="flex-1 md:grow-[1.6]" />
-		<div class="flex gap-4">
-			<a class="text-xs md:text-base lg:text-base" href="https://github.com/tiredBlueWhale"
-				>GitHub
-			</a>
-			<a class="text-xs md:text-base lg:text-base" href="{base}/stay-inside/privacy"
-				>Privacy Policy
-			</a>
-		</div>
+		<TextFooter path="stay-inside" />
 		<SectionDevice slot="device">
 			<div class="translate-x-2 md:translate-x-0 -translate-y-2 md:translate-y-4 lg:translate-y-8">
 				<IPhone />
@@ -70,14 +64,7 @@
 		<div class="grow-[.1]" />
 		<Download apple="http" android="asdjfkajfs" />
 		<div class="flex-1 md:grow-[1.6]" />
-		<div class="flex gap-4">
-			<a class="text-xs md:text-base lg:text-base" href="https://github.com/tiredBlueWhale"
-				>GitHub</a
-			>
-			<a class="text-xs md:text-base lg:text-base" href="{base}/color-and-shape/privacy"
-				>Privacy Policy</a
-			>
-		</div>
+		<TextFooter path="color-and-shape" />
 		<SectionDevice slot="device" landscape>
 			<div class="translate-x-2 md:translate-x-8 translate-y-4 md:translate-y-6 z-10">
 				<Android />
@@ -101,10 +88,7 @@
 		<div class="grow-[.1]" />
 		<Download apple="http" android="asdjfkajfs" />
 		<div class="flex-1" />
-		<div class="flex gap-4">
-			<a class="text-xs lg:text-base" href="https://github.com/tiredBlueWhale">GitHub</a>
-			<a class="text-xs lg:text-base" href="{base}/privacy">Privacy Policy</a>
-		</div>
+		<TextFooter path="color-and-shape" />
 		<SectionDevice slot="device">
 			<div class="translate-x-2 -translate-y-4 md:translate-y-4 lg:translate-y-16">
 				<IPhone />

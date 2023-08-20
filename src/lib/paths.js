@@ -1,4 +1,4 @@
-import { readable } from 'svelte/store';
+// import { readable } from 'svelte/store';
 
 
 export const PATHS = {
@@ -10,4 +10,4 @@ export const PATHS = {
     '/maze': { title: 'Maze', paths: ['privacy'] },
 
 }
-export const paths = readable(PATHS)
+// export const paths = readable(PATHS)
