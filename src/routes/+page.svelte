@@ -28,7 +28,7 @@
 		<div class="grow-[.1]" />
 		<Download apple="http" android="asdjfkajfs" />
 		<div class="flex-1 md:grow-[1.6]" />
-		<TextFooter path="stay-inside" />
+		<TextFooter path="https://www.iubenda.com/privacy-policy/75552625" external={true} />
 		<SectionDevice slot="device">
 			<div class="translate-x-2 md:translate-x-0 -translate-y-2 md:translate-y-4 lg:translate-y-8">
 				<IPhone />
