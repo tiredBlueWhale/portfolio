@@ -18,8 +18,6 @@
 	 */
 	let sectionPlaceholder;
 
-	// let height = '100%';
-
 	$: {
 		if (section !== undefined && sectionPlaceholder !== undefined) {
 			const _height = sectionPlaceholder.clientHeight + sectionPlaceholder.offsetTop - scrollY;

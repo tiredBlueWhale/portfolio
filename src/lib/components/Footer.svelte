@@ -1,7 +1,4 @@
 <script>
-	import github from '$lib/images/github-mark-white.svg';
-	import envelope from '$lib/images/envelope-regular.svg';
-
 	import { Section } from '$lib/components/sections';
 
 	const year = new Date().getFullYear();
@@ -43,6 +40,6 @@
 				</svg>
 			</a>
 		</div>
-		<span class="text-white">Copyright @ {year} Tired Blue Whale. All rights reserved</span>
+		<span class="text-white">&copy; {year} Tired Blue Whale. All rights reserved</span>
 	</footer>
 </Section>

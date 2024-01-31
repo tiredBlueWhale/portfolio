@@ -1,5 +1,4 @@
 <script>
-	// export let color = 'bg-neutral-800';
 	export let fontFamily = '';
 </script>
 

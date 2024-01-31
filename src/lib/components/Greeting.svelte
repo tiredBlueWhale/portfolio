@@ -103,9 +103,8 @@
 </script>
 
 <div class="flex flex-flow justify-center {introAnimation}">
-	<h1 class="text-5xl md:text-6xl lg:text-7xl text-right pr-2" bind:this={heading}>
-		<!-- {greetings[index]} -->
-	</h1>
+	<!-- svelte-ignore a11y-missing-content -->
+	<h1 class="text-5xl md:text-6xl lg:text-7xl text-right pr-2" bind:this={heading} />
 	<span
 		class="text-5xl md:text-6xl lg:text-7xl w-1 bg-white text-transparent {blinkAnimation}"
 		bind:this={cursor}>b</span
