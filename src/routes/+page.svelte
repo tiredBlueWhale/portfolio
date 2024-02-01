@@ -1,9 +1,9 @@
 <script>
-	import stayInsideiOS from '$lib/images/stay-inside-iOS.png';
+	import stayInsideiOS from '$lib/images/stay-inside-ios.png';
 	import stayInsideAnroid from '$lib/images/stay-inside-android.png';
-	import colorAndShapeiOS from '$lib/images/color-shape-iOS.png';
+	import colorAndShapeiOS from '$lib/images/color-shape-ios.png';
 	import colorAndShapeAndroid from '$lib/images/color-shape-android.png';
-	import tobi2goiOS from '$lib/images/tobi-2-go-iOS.png';
+	import tobi2goiOS from '$lib/images/tobi-2-go-ios.png';
 	import tobi2goAndroid from '$lib/images/tobi-2-go-android.png';
 
 	import { base } from '$app/paths';
