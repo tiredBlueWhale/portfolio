@@ -1,11 +1,14 @@
 <script>
 	import { Section } from '$lib/components/sections';
 
+	import water from '$lib/images/tired-blue-whale-water.png';
+
 	const year = new Date().getFullYear();
 </script>
 
-<Section sectionId="footer" color="bg-neutral-800">
+<Section sectionId="footer" color="bg-neutral-950">
 	<footer class="h-full p-8 flex flex-col justify-center items-center gap-6">
+		<img class="h-48 md:h-64 lg:h-96" alt="Tired Blue Whale Logo" src={water} />
 		<div class="flex gap-4">
 			<a href="https://github.com/tiredBlueWhale">
 				<svg

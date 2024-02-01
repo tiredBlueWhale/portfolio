@@ -1,21 +1,30 @@
 const colors = require('tailwindcss/colors')
 const defaultTheme = require('tailwindcss/defaultTheme')
+const plugin = require('tailwindcss/plugin')
 
 
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
-    colors: {
-      ...colors,
-      hero: '#0148ca'
-    },
+    // colors: {
+    //   ...colors,
+
+
+    // },
     extend: {
+      colors: {
+        hero: '#0148ca',
+        'stay-inside': '#601aaf',
+        'stay-inside-shadow': '#1aafaa',
+        'color-and-shape': '#191919'
+      },
       fontFamily: {
         'sans': ['Fira-Mono', ...defaultTheme.fontFamily.sans],
         'fira': ['Fira-Mono', 'sans-serif'],
         'martian': ['Martian-Mono', 'sans-serif'],
-        'open-dyslexic': ['OpenDyslexic', 'sans-serif']
+        'audiowide': ['Audiowide', 'sans-serif'],
+        'press-start-2p': ['"Press Start 2P"'],
       },
       height: {
         screen: ['100vh /* fallback for Opera, IE and etc. */', '100dvh'],
@@ -54,8 +63,22 @@ export default {
         'hero-sub-title': 'hero-sub-title 1.5s ease-in-out 1s backwards',
         'hero-logo': 'fade-in 1.5s ease-in-out 2.5s backwards',
       },
+      textShadow: {
+        DEFAULT: '6px 6px 0px var(--tw-shadow-color)',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          'text-shadow': (value) => ({
+            textShadow: value,
+          }),
+        },
+        { values: theme('textShadow') }
+      )
+    }),
+  ],
 }
 

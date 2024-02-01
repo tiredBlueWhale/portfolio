@@ -35,7 +35,7 @@
 <svelte:window bind:outerHeight />
 
 <Section sectionId="hero" zIndex="z-[10]">
-	<section class="h-full flex justify-center items-center bg-hero">
+	<section class="h-full flex justify-center items-center bg-blue-700">
 		<div class="relative flex flex-col-reverse md:flex-row justify-center items-center">
 			<div>
 				<div class="overflow-clip">
@@ -54,11 +54,7 @@
 			</div>
 			<div class="w-8" />
 			<div class="overflow-clip">
-				<img
-					class="h-48 md:h-64 lg:h-96 aspect-square {logoAniamtion}"
-					alt="Tired Blue Whale Logo"
-					src={logo}
-				/>
+				<img class="h-48 md:h-64 lg:h-96 {logoAniamtion}" alt="Tired Blue Whale Logo" src={logo} />
 			</div>
 			<div class="absolute right-0 -bottom-3 lg:-bottom-16 left-0 translate-y-full">
 				<Greeting />

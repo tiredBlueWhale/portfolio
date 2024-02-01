@@ -1,7 +1,6 @@
 <script>
+	import { base } from '$app/paths';
 	import { SectionScroll } from '$lib/components/sections';
-
-	import Footer from '../../lib/components/TextFooter.svelte';
 </script>
 
 <SectionScroll title="Color & Shape" color="bg-purple-700">
@@ -44,5 +43,7 @@
 		id, fringilla sollicitudin lorem. Fusce fringilla nulla quis ligula iaculis lacinia.
 	</p>
 	<div class="flex-1" />
-	<Footer path="color-and-shape" />
+	<div class="flex gap-4">
+		<a class="text-sm lg:text-base" href="{base}/color-and-shape/privacy">Privacy Policy </a>
+	</div>
 </SectionScroll>

@@ -11,8 +11,10 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
+		"@fontsource/audiowide": "^5.0.18",
 		"@fontsource/fira-mono": "^5.0.8",
 		"@fontsource/martian-mono": "^5.0.8",
+		"@fontsource/press-start-2p": "^5.0.18",
 		"@neoconfetti/svelte": "^2.2.1",
 		"@sveltejs/adapter-auto": "^3.1.1",
 		"@sveltejs/adapter-static": "^3.0.1",

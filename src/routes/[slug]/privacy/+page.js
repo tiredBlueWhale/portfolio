@@ -3,6 +3,7 @@ import { error } from '@sveltejs/kit';
 
 import StayInside from './StayInside.svelte';
 import ColorAndShape from './ColorAndShape.svelte';
+import errorPage from '../../+error.svelte'
 
 // we don't need any JS on this page, though we'll load
 // it in dev so that we get hot module replacement
@@ -22,7 +23,7 @@ function getComponent(slug) {
         case 'color-and-shape':
             return ColorAndShape
         default:
-            return null;
+            return errorPage;
     };
 }
 
@@ -34,5 +35,5 @@ export function load({ params }) {
         return { component };
     }
 
-    // throw error(404, 'Not found');
+    throw error(404, 'Not found');
 }

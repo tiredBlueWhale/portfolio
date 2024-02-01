@@ -1,12 +1,12 @@
 @import '@fontsource/martian-mono';
 @import '@fontsource/fira-mono';
+@import '@fontsource/audiowide';
+@import '@fontsource/press-start-2p';
 
-@font-face {
-	font-family: OpenDyslexic;
-	src: url('../lib/fonts/OpenDyslexicMono-Regular.otf') format("opentype");
-}
 
 @tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
 
@@ -31,6 +31,3 @@
 		@apply underline;
 	}
 }
-
-@tailwind components;
-@tailwind utilities;
