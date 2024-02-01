@@ -94,10 +94,9 @@
 		<span class="text-xs md:text-base lg:text-base md:pb-1">Utility</span>
 		<h1 class="text-3xl md:text-5xl lg:text-7xl md:pb-2">Tobi2Go</h1>
 		<h2 class="text-lg md:text-xl lg:text-3xl pb-1 lg:pb-4">Feel good app</h2>
-		<p class="text-sm md:text-base lg:text-lg pb-1 lg:pb-4">
-			You are feeling down, need a bit of motivation or just feel like all you need is someone with
-			a good attitude. <br /> Then Tobi2Go is the app for you, just press one of the many buttons to
-			get you daily dose of encouragement.
+		<p class="text-xs md:text-sm lg:text-base pb-1 lg:pb-4">
+			Feeling down? In need of motivation? Look no further, press one of the many buttons and get
+			your daily dose of encouragement.
 		</p>
 		<a class="text-sm md:text-base lg:text-lg pb-2 lg:pb-8" href="{base}/tobi-2-go">Learn More </a>
 		<div class="grow-[.1]" />
