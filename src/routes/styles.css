@@ -11,7 +11,7 @@
 @layer base {
 
 	html {
-		@apply bg-hero
+		@apply bg-neutral-950
 	}
 
 	h1,

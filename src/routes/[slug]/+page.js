@@ -18,10 +18,10 @@ export const prerender = true;
  */
 function getComponent(slug) {
     switch (slug) {
-        case 'stay-inside':
-            return StayInside;
-        case 'color-and-shape':
-            return ColorAndShape
+        // case 'stay-inside':
+        //     return StayInside;
+        // case 'color-and-shape':
+        //     return ColorAndShape
         default:
             return errorPage;
     };
@@ -34,6 +34,4 @@ export function load({ params }) {
     if (component !== null) {
         return { component };
     }
-
-    throw error(404, 'Not found');
 }
