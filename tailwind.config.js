@@ -1,4 +1,3 @@
-const colors = require('tailwindcss/colors')
 const defaultTheme = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
 
@@ -7,11 +6,6 @@ const plugin = require('tailwindcss/plugin')
 export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
-    // colors: {
-    //   ...colors,
-
-
-    // },
     extend: {
       colors: {
         hero: '#0148ca',
